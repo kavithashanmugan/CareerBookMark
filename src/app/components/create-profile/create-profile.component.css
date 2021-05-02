@@ -1,0 +1,18 @@
+.userForm{
+    margin:5%;
+   border-radius: 4px;
+   border:1px solid;
+   padding:5%;
+}
+.submitBtn{
+    background-color:#02A59C;
+    color:white;
+    border-radius: 4px;
+    width:150px;
+    height:40px;
+    text-align: center; 
+}
+.textarea{
+    height:max-content;
+    width: max-content;
+}
