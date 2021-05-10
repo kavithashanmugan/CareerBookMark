@@ -28,7 +28,8 @@ import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
     UserHomeComponent,
     AppHeaderComponent,
     CreateProfileComponent,
-    LoginComponent
+    LoginComponent,
+    AppFooterComponent
   ],
   imports: [
     BrowserModule,

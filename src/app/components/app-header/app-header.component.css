@@ -1,0 +1,63 @@
+.logo{
+    width:275px;
+    height:55px;
+    margin:0px;
+}
+.container{
+    padding-left:0px;
+    padding-right:0px;
+    margin-left:0px;
+    margin-right:0px;
+}
+
+.navbar-expand-md .navbar-nav .nav-link {
+    padding-right: 1rem;
+    padding-left: 1rem;
+}
+.nav-link{
+    font-size: 40px;
+    padding-left:1%;
+    color: #eee ;
+}
+
+.navbar-brand{
+    float:left;
+    margin-left:0px;
+    padding-left:0px;
+}
+
+* {box-sizing: border-box;
+}
+
+
+
+
+ .topnav button{
+    background-color: transparent;
+    /* overflow: hidden; */
+    color:white;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+} 
+
+
+
+.signUp{
+    background-color: mediumseagreen;
+    font-size:25px;
+    padding:1%;
+    color:white;
+    width: 130px;
+    height:70px;
+    border-radius: 7px;
+    margin-top:2%;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.navbar-dark{
+    background-color: black;
+
+}
+.hire .signUp{
+    background-color: blue;
+}
