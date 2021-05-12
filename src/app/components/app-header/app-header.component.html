@@ -8,18 +8,18 @@
     <!-- <div class="collapse navbar-collapse" id="navbarNav"> -->
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
-        <a class="nav-link" href="#">Jobs
+        <a [routerLink]="'/jobs'" class="nav-link" [routerLinkActive]="['active']">Jobs
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Portfolio</a>
+        <a class="nav-link" [routerLinkActive]="['active']" href="#">Portfolio</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Networking</a>
+        <a class="nav-link" href="#" [routerLinkActive]="['active']">Networking</a>
 
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Upskill</a>
+        <a class="nav-link" href="#" [routerLinkActive]="['active']">Upskill</a>
       </li>
 
     </ul>

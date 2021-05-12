@@ -1,12 +1,17 @@
-.bgImage{
-    background-image: url("../../../assets/images/homepage.jpg");
-    background-repeat: no-repeat;
-    /* background-color: cadetblue; */
-    height:1200px;
-    background-position: 50% 40%;
-    opacity: 0.9;
-    background-size: cover;
- 
+
+@media (min-width: 1025px){
+    .bgImage{
+        background-image: url("../../../assets/images/homepage.jpg");
+        background-repeat: no-repeat;
+        /* background-color: cadetblue; */
+        height:1000px;
+        background-position: 50% 40%;
+        opacity: 0.9;
+        background-size: cover;
+        /* margin-top:0;
+        padding-top:0; */
+     
+    }
 }
 
 .desc{

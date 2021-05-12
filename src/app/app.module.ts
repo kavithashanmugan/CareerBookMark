@@ -12,8 +12,9 @@ import { PostJobComponent } from './components/post-job/post-job.component';
 import { UserHomeComponent } from './components/user-home/user-home.component';
 import { AppHeaderComponent } from './components/app-header/app-header.component';
 import { CreateProfileComponent } from './components/create-profile/create-profile.component';
-import { LoginComponent } from './components/login/login.component';
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
+import { AppFooterComponent } from './components/app-footer/app-footer.component';
+import { JobsComponent } from './components/jobs/jobs.component';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
     UserHomeComponent,
     AppHeaderComponent,
     CreateProfileComponent,
-    LoginComponent
+    AppFooterComponent,
+    JobsComponent
   ],
   imports: [
     BrowserModule,
