@@ -1,0 +1,60 @@
+.jobresults{
+    background-color:rgb(245,245,245);
+}
+.jobwrapper{
+    background-color: #ffffff;
+    padding: 15px;
+    color: #19191a;
+    margin: 0 0 30px 0;
+    list-style: none;
+    word-break: break-word;
+    line-height: 30px;
+}
+
+.job-card{
+    display:block;
+}
+
+.job-search-input{
+    border:none;
+}
+
+#search-jobs{
+    border:none;
+    overflow: hidden;
+    /* padding: 10px 10px 0 10px; */
+    resize: none;
+    font-size:19px;
+    max-width:100%;
+    border-bottom: 3px solid #19191a;
+    height: 49px;
+}
+/* .form-group{
+    display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+} */
+  
+input{
+     outline: none !important;
+ }
+.searchbtn{
+    margin-top:2%;
+    margin-left:1%;
+}
+
+.perfect-centering{
+    display: flex;
+    justify-content: center;
+}
+
+.search-form button{
+ background: #2196F3;
+ color: white;
+  font-size: 17px;
+  border: 1px solid grey;
+  width:150px;
+  height:50px;
+  /* margin-top:2%; */
+  
+}

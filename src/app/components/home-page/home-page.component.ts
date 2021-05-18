@@ -15,7 +15,7 @@ export class HomePageComponent implements OnInit {
   ngOnInit(): void {
   }
   signUp(){
-    this.router.navigateByUrl('/create-profile')
+    this.router.navigateByUrl('/sign-up')
   }
 
 }

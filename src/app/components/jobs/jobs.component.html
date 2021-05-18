@@ -1,2 +1,27 @@
 <app-app-header></app-app-header>
-<p>jobs works!</p>
+
+
+<!-- <div class="row"> -->
+    <!-- <div class="mx-auto"> -->
+        <div class="perfect-centering">
+            <form class="form-inline">
+                
+                    <div class="form-group search-form">
+                        <input id="search-jobs" placeholder="Search Jobs" size="100">
+                   
+                        <button type="submit" (click)="search()"><i class="fa fa-search"></i></button>
+                    
+                </div>
+                   
+               
+            </form>
+        </div>
+    <!-- </div> -->
+<!-- </div> -->
+<br>
+
+<section class="jobresults">
+    <div *ngFor="let job of allJobs">
+
+    </div>
+</section>

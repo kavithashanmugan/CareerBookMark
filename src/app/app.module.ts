@@ -15,6 +15,7 @@ import { CreateProfileComponent } from './components/create-profile/create-profi
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 import { AppFooterComponent } from './components/app-footer/app-footer.component';
 import { JobsComponent } from './components/jobs/jobs.component';
+import { SignUpComponent } from './components/sign-up/sign-up.component';
 
 
 @NgModule({
@@ -30,7 +31,8 @@ import { JobsComponent } from './components/jobs/jobs.component';
     AppHeaderComponent,
     CreateProfileComponent,
     AppFooterComponent,
-    JobsComponent
+    JobsComponent,
+    SignUpComponent
   ],
   imports: [
     BrowserModule,
