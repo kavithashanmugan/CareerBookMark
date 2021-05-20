@@ -29,14 +29,16 @@ export class CreateProfileComponent implements OnInit {
 
   async ngOnInit() {
     this.userProfileForm = this.formBuilder.group({
-      firstName: [''],
-      lastName: [''],
+      fullName: [''],
       phoneNumber:[''],
+      website:[''],
       emailId:[''],
       jobTitle:[''],
       location:[''],
       resume:[''],
-      summary:['']
+      summary:[''],
+      experience:[''],
+      education:['']
   }, {
       //validator: MustMatch('password', 'confirmPassword')
   });

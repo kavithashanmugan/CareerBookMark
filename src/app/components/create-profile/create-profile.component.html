@@ -4,16 +4,17 @@
     <div class="userForm">
     <div class="row">
         <div class="form-group col-sm-4">
-            <label for="firstName">First Name:</label>
-            <input type="text" id="firstName" placeholder="First Name" formControlName="firstName" class="form-control">
-        </div>
-        <div class="form-group col-sm-4">
-            <label for="lastName">Last Name:</label>
-            <input type="text" id="lastName" placeholder="Last Name" formControlName="lastName" class="form-control">
+            <label for="firstName">Full Name:</label>
+            <input type="text" id="fullName" placeholder="Full Name" formControlName="fullName" class="form-control">
         </div>
         <div class="form-group col-sm-4">
             <label for="phoneNumber">Phone Number:</label>
             <input type="text" id="phoneNumber" placeholder="Phone Number" formControlName="phoneNumber"
+                class="form-control">
+        </div>
+        <div class="form-group col-sm-4">
+            <label for="website">Web Site:</label>
+            <input type="text" id="webSite" placeholder="Web Site" formControlName="website"
                 class="form-control">
         </div>
     </div>
@@ -42,6 +43,18 @@
         <div class="form-group col-sm-12">
             <label for="summary">Summary:</label>
            <textarea name="summary" formControlName="summary" class="textarea" class="form-control"></textarea>
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group col-sm-12">
+            <label for="summary">Experience:</label>
+           <textarea name="summary" formControlName="experience" class="textarea" class="form-control"></textarea>
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group col-sm-12">
+            <label for="summary">Education:</label>
+           <textarea name="summary" formControlName="education" class="textarea" class="form-control"></textarea>
         </div>
     </div>
     <div class="row">
