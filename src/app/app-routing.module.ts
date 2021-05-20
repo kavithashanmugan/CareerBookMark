@@ -12,6 +12,7 @@ const routes: Routes = [{path:'create-profile',component:CreateProfileComponent}
 {path:'portfolio',component:PortfolioComponent},
 {path:'sign-up',component:SignUpComponent},
 {path:'home',component:HomePageComponent},
+{ path: '**', redirectTo: 'home' }
 ];
 
 @NgModule({

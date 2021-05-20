@@ -1,0 +1,64 @@
+.profileSection{
+    margin:5%;
+    display:flex;
+    background-color: antiquewhite;
+    box-shadow: 2px 3px 170px -8px rgba(0,0,0,0.8);
+    flex-grow: 1;
+    flex-direction: row;
+
+
+}
+.name{
+    text-align: center;
+}
+.portfolio-main{
+    border-color: black;
+    display:flex;
+    flex-direction:row;
+    flex-wrap: wrap;
+    justify-content:center;
+    background-color:burlywood;
+    margin-left:5px;
+
+}
+.main{
+    display:flex;
+    flex-direction: column;
+}
+.name{
+    font-size:30px;
+    color:black;
+    font-weight: 800;
+    font-family: 'Times New Roman', Times, serif;
+
+}
+#title{
+    font-size:2.4rem;
+    line-height: 1.33333;
+    color:black;
+    font-weight: 800;
+    font-family: 'Times New Roman', Times, serif;
+}
+#name{
+    font-size: 4.8rem;
+    line-height: 1.33333;
+    color:black;
+    font-weight: 800;
+    font-family: 'Times New Roman', Times, serif;
+}
+.portfolio{
+    margin-left:2%;
+}
+
+.card{
+    margin-top:5%;
+}
+
+/* 
+.wrapper{
+    display:flex;
+    justify-content: center;
+    border: 1px solid #ff4136;
+    padding:30px;
+} */
+

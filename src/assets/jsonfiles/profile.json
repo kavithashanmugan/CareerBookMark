@@ -1,0 +1,17 @@
+{"Basic Information":{
+    "First Name": "Kavitha",
+    "Last Name": "shanmugan",
+    "Current Job Title": "Blockchain Developer",
+    "Company": "Tata Consultancy Services",
+    "Profile Summary": "My career objective is to procure a job in a progressive organization where i can contribute to the company's growth and thereby upgrading myself.I am currently working with TCS.Have sound knowledge in Oracle,Node JS, Javascript and Unix.Presently Working with Blockchain Technology,focusing on Development of Ethereum Smart Contracts."
+},
+"Experiences":[{"Company":"Tata Consultancy Services","Job Title":"Blockchain Developer","Start Date":"Aug 2018","End Date":"Sep 2020","Job Location":"Kochi",
+    
+    "Responsibilities":"Training of newly joined associates in developing Ethereum DApps.Lead a team of 9 members in delivering Ethereum Blockchain 
+    solutions and POCs within stipulated time period using MEAN Stack.
+Experience in developing UI using Angular6 framework.
+Experienced in using Source Version Control-Git and GitLab
+Develop APIs using Express Framework (NodeJS) needed for user story and perform integration with Angular7 and Ethereum Blockchain."}],
+"Education":[{"School":"VIDYA ACADEMY OF SCIENCE AND TECHNOLOGY - TECHNICAL CAMPUS, KILIMANOOR","Degree":"Bachelor of Technology (B.Tech.)EEE",
+    "Field of Study":"Electrical and Electronics Engineering","Start Year":"2011","End Year":"2015","Grade":"FIRST CLASS"}]
+}
