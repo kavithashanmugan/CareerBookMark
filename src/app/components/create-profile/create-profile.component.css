@@ -6,6 +6,9 @@
    border:1px solid;
    padding:5%;
 }
+label{
+    font-size:15px;
+}
 .submitBtn{
     background-color:#02A59C;
     color:white;
@@ -13,8 +16,12 @@
     width:150px;
     height:40px;
     text-align: center; 
+    margin-top:10px;
 }
 .textarea{
     height:max-content;
     width: max-content;
+}
+.form-control{
+    font-size: 1.4rem;
 }

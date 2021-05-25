@@ -1,54 +1,62 @@
-<div id="app" >
-  <nav class="navbar navbar-expand-md navbar-dark sticky-top" >
-    <a class="navbar-brand" href="#"><img class="logo" src="../../../assets/images/CareerBookMark.JPG"
-        alt="careerbookmarklogo"></a>
-    <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+<div id="app">
+    <nav class="navbar navbar-expand-md navbar-dark sticky-top">
+        <a class="navbar-brand" href="#"><img class="logo" src="../../../assets/images/CB_logo.png" alt="careerbookmarklogo"></a>
+        <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
           <span class="navbar-toggler-icon"></span>
       </button> -->
-    <!-- <div class="collapse navbar-collapse" id="navbarNav"> -->
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item">
-        <a [routerLink]="'/jobs'" class="nav-link" [routerLinkActive]="['active']">Jobs
+        <!-- <div class="collapse navbar-collapse" id="navbarNav"> -->
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a [routerLink]="'/jobs'" class="nav-link" [routerLinkActive]="['active']">Jobs
         </a>
-      </li>
-      <li class="nav-item">
-        <a  [routerLink]="'/portfolio'" class="nav-link" [routerLinkActive]="['active']" href="#">Portfolio</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#" [routerLinkActive]="['active']">Networking</a>
+            </li>
+            <li class="nav-item">
+                <a [routerLink]="'/portfolio'" class="nav-link" [routerLinkActive]="['active']" href="#">Portfolio</a>
+            </li>
+            <li class="nav-item">
+                <a [routerLink]="'/network'" class="nav-link" href="#" [routerLinkActive]="['active']">Networking</a>
 
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#" [routerLinkActive]="['active']">Upskill</a>
-      </li>
+            </li>
+            <li class="nav-item">
+                <a [routerLink]="'/upskill'" class="nav-link" href="#" [routerLinkActive]="['active']">Upskill</a>
+            </li>
 
-    </ul>
-    <ul class="navbar-nav ml-auto">
-      <!-- <li class="nav-item">
-              <a class="nav-link" href="#">Hire Now</a>
-          </li> -->
-      <li class="nav-item" *ngIf=!userLogin>
-        <button class="signUp">Sign In</button>
-        <!-- <a class="nav-link" href="#">Login</a> -->
-      </li>
+        </ul>
+        <div class="navbar-nav">
+            <form id="search">
 
-      <li class="nav-item" *ngIf=userLogin>
-        <button style="font-size:48px" class="dropdown-toggle"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user-circle-o"></i>
-          
-        
-        </button>
-        <div class="dropdown-menu" >
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <a class="dropdown-item" href="#">Something else here</a>
+                <input type="search" placeholder="Search...">
+
+
+            </form>
+
         </div>
-      
-      </li>
-      <li class="nav-item pl-5 hire">
-        <button class="signUp">Hire Now!</button>
-      </li>
+        <ul class=" navbar-nav ml-auto ">
+            <!-- <li class="nav-item ">
+              <a class="nav-link " href="# ">Hire Now</a>
+          </li> -->
+            <li class="nav-item " *ngIf=!userLogin>
+                <button class="signUp ">Sign In</button>
+                <!-- <a class="nav-link " href="# ">Login</a> -->
+            </li>
 
-    </ul>
-    <!-- </div> -->
-  </nav>
+            <li class="nav-item " *ngIf=userLogin>
+                <button style="font-size:48px " class="dropdown-toggle " data-toggle="dropdown " aria-haspopup="true " aria-expanded="false "><i class="fa fa-user-circle-o "></i>
+
+
+                </button>
+                <div class="dropdown-menu ">
+                    <a class="dropdown-item " href="# ">Action</a>
+                    <a class="dropdown-item " href="# ">Another action</a>
+                    <a class="dropdown-item " href="# ">Something else here</a>
+                </div>
+
+            </li>
+            <li class="nav-item pl-5 hire ">
+                <button class="signUp ">Hire Now!</button>
+            </li>
+
+        </ul>
+        <!-- </div> -->
+    </nav>
 </div>

@@ -1,27 +1,48 @@
 <app-app-header></app-app-header>
+<div class="boxwrap">
+    <form [formGroup]="jobSearchForm" (ngSubmit)="searchJobs()">
+        <div class="form-row">
 
+            <div class="form-group col-sm-4 mr-4">
+                <input class="form-control" formControlName="jobKeyWords" placeholder="Job Key Words" type="text">
+            </div>
+            <div class="form-group col-sm-4 mr-4">
+                <input class="form-control" formControlName="location" placeholder="Location" type="text">
+            </div>
+            <div class="form-group col-sm-3 mr-4">
+                <select class="form-control" formControlName="jobType" placeholder="Location">
+                    <option hidden [value]="" selected>Job Type</option>
+                    <option *ngFor="let type of jobType ">{{type}}</option>
+                </select>
+            </div>
 
-<!-- <div class="row"> -->
-    <!-- <div class="mx-auto"> -->
-        <div class="perfect-centering">
-            <form class="form-inline">
-                
-                    <div class="form-group search-form">
-                        <input id="search-jobs" placeholder="Search Jobs" size="100">
-                   
-                        <button type="submit" (click)="search()"><i class="fa fa-search"></i></button>
-                    
-                </div>
-                   
-               
-            </form>
+            <div class="form-group ">
+                <button type="submit" class="btn btn-primary">Search Jobs</button>
+            </div>
+
         </div>
-    <!-- </div> -->
-<!-- </div> -->
-<br>
+    </form>
+</div>
+<div *ngIf="searchResults">
+    <div class="resultBox">
+        <h3>Search Results</h3>
+        <hr>
+        <div class="row">
+            <div class="col-sm-3" *ngFor="let job of allJobs">
+                <div class="card">
+                    <img src="https://mdbootstrap.com/img/new/standard/nature/184.jpg" class="card-img-top">
+                    <div class="card-body">
+                        <div class="card-title">
+                            {{job.jobTitle}}
+                        </div>
+                        <div class="card-text">
+                            {{job.jobTitle}}
+                        </div>
+                        <button type="button" class="btn btn-primary">Button</button>
 
-<section class="jobresults">
-    <div *ngFor="let job of allJobs">
-
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-</section>
+</div>

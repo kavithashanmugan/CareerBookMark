@@ -1,7 +1,7 @@
 <div>
     <!-- [routerLink]="'/jobs'" -->
     <a [routerLink]="'/home'"><img src="../../../assets/images/CareerBookMark.JPG"></a>
-    
+
 </div>
 <section id="cover" class="min-vh-100">
     <div id="cover-caption">
@@ -10,20 +10,36 @@
                 <div class="col-lg-5 mx-auto text-center form p-4">
                     <h1 class="display-4 py-2 text-truncate">Welcome to CareerBookMark</h1>
                     <div class="px-2">
-                        <form action="" class="justify-content-center">
+                        <form [formGroup]="signUpUserForm" class="justify-content-center" (ngSubmit)="signUp()">
+                            <!--  -->
                             <div class="form-group">
-                                <label class="sr-only">Name</label>
-                                <input type="text" class="form-control" placeholder="Jane Doe">
+                                <div class="input-container">
+                                    <label class="sr-only">Name</label>
+                                    <input type="text" class="form-control" formControlName="fullName" placeholder="Jane Doe">
+                                    <!-- <div *ngIf="name.errors?.required">
+                                    Name is required.
+                                </div> -->
+                                </div>
                             </div>
                             <div class="form-group">
-                                <label class="sr-only">Email</label>
-                                <input type="text" class="form-control" placeholder="jane.doe@example.com">
+                                <div class="input-container">
+                                    <label class="sr-only">Email</label>
+                                    <input type="text" class="form-control" formControlName="emailId" placeholder="jane.doe@example.com">
+                                </div>
                             </div>
+
                             <div class="form-group">
-                                <label class="sr-only">Password</label>
-                                <input type="text" class="form-control" placeholder="password">
+                                <div class="input-container">
+                                    <label class="sr-only">Password</label>
+                                    <input type="password" class="form-control" formControlName="password" placeholder="password">
+                                    <button (click)="showPassword()">
+                                        <i class="fa fa-eye icon" aria-hidden="true" *ngIf="!show"></i>
+                                        <i class="fa fa-eye-slash icon" aria-hidden="true" *ngIf="show"></i>
+                                      </button>
+                                </div>
                             </div>
-                            <button type="submit" class="btn btn-primary btn-lg" [routerLink]="'/create-profile'">Sign Up</button>
+                            <!-- [routerLink]="'/create-profile'" -->
+                            <button type="submit" class="btn btn-primary btn-lg" [disabled]="!signUpUserForm.valid">Sign Up</button>
                         </form>
                     </div>
                 </div>

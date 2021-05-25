@@ -13,14 +13,15 @@ import * as ClassicEditor from '@ckeditor/ckeditor5-angular';
 export class CreateProfileComponent implements OnInit {
   public Editor = ClassicEditor;
   userProfileForm = new FormGroup({
-    firstName: new FormControl('', Validators.required),
-    lastName: new FormControl('', Validators.required),
-    phoneNumber: new FormControl('', Validators.required),
-    emailId:new FormControl('', Validators.required),
-    jobTitle:new FormControl('', Validators.required),
-    location:new FormControl('', Validators.required),
-    resume:new FormControl('', Validators.required),
-    summary:new FormControl('', Validators.required)
+    fullName:new FormControl('',Validators.required),
+    phoneNumber:new FormControl('',Validators.required),
+    website:new FormControl('',Validators.required),
+    emailId:new FormControl('',Validators.required),
+    jobTitle:new FormControl('',Validators.required),
+    location:new FormControl('',Validators.required),
+    summary:new FormControl('',Validators.required),
+    experience:new FormControl('',Validators.required),
+    education:new FormControl('',Validators.required)
     
    });
 

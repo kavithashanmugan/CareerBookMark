@@ -15,6 +15,7 @@ export class HomePageComponent implements OnInit {
   ngOnInit(): void {
   }
   signUp(){
+    console.log("signing up")
     this.router.navigateByUrl('/sign-up')
   }
 

@@ -6,8 +6,7 @@
     display: flex;
     align-items: center;
     position: relative;
-     /* Add the blur effect */
-
+    /* Add the blur effect */
 }
 
 #cover-caption {
@@ -16,7 +15,9 @@
     z-index: 1;
 }
 
+
 /* only used for background overlay not needed for centering */
+
 form:before {
     content: '';
     height: 100%;
@@ -24,7 +25,12 @@ form:before {
     position: absolute;
     top: 0;
     width: 100%;
-    background-color: rgba(0,0,0,0.3);
+    background-color: rgba(0, 0, 0, 0.3);
     z-index: -1;
     border-radius: 10px;
+}
+
+.input-container {
+    display: flex;
+    width: 100%;
 }

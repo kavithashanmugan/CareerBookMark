@@ -16,6 +16,10 @@ import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 import { AppFooterComponent } from './components/app-footer/app-footer.component';
 import { JobsComponent } from './components/jobs/jobs.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
+import { HttpClientModule } from '@angular/common/http';
+import { UpskillComponent } from './components/upskill/upskill.component';
+
+
 
 
 @NgModule({
@@ -32,14 +36,16 @@ import { SignUpComponent } from './components/sign-up/sign-up.component';
     CreateProfileComponent,
     AppFooterComponent,
     JobsComponent,
-    SignUpComponent
+    SignUpComponent,
+    UpskillComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    CKEditorModule
+    CKEditorModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
