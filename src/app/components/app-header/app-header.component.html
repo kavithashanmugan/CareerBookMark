@@ -8,7 +8,7 @@
         <ul class="navbar-nav mr-auto">
             <li class="nav-item">
                 <a [routerLink]="'/jobs'" class="nav-link" [routerLinkActive]="['active']">Jobs
-        </a>
+                </a>
             </li>
             <li class="nav-item">
                 <a [routerLink]="'/portfolio'" class="nav-link" [routerLinkActive]="['active']" href="#">Portfolio</a>
@@ -36,7 +36,7 @@
               <a class="nav-link " href="# ">Hire Now</a>
           </li> -->
             <li class="nav-item " *ngIf=!userLogin>
-                <button class="signUp ">Sign In</button>
+                <button class="signUp" data-toggle="modal" data-target="#signInModal">Sign In</button>
                 <!-- <a class="nav-link " href="# ">Login</a> -->
             </li>
 
@@ -59,4 +59,33 @@
         </ul>
         <!-- </div> -->
     </nav>
+</div>
+<!-- login modal -->
+<div class="modal fade" id="signInModal" tabindex="-1" aria-labelledby="signInModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="signInModalLabel">Sign In</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="col-sm-12">
+                    <div class="row">
+                        <label for="emailId">Email Id</label>
+                        <input type="email" id="emailId" class="form-control">
+                    </div>
+                    <div class="row">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" class="form-control">
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer center-div">
+                <button type="button" class="btn btn-primary signInModalBtn">Sign In</button>
+
+            </div>
+        </div>
+    </div>
 </div>

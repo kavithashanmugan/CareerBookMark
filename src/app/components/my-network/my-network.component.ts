@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
+
 
 @Component({
   selector: 'app-my-network',
@@ -7,9 +10,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MyNetworkComponent implements OnInit {
 
-  constructor() { }
+  constructor(private modalService: NgbModal) {}
 
   ngOnInit(): void {
   }
-
+ 
 }

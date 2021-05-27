@@ -1,0 +1,14 @@
+.footer-design {
+    background-color: black;
+    color: wheat;
+    text-align: center;
+    font-size: 25px;
+}
+
+.footer {
+    margin: 0;
+    display: block;
+    bottom: 0;
+    width: 100%;
+    position: relative;
+}

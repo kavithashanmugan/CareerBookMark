@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { APP_BOOTSTRAP_LISTENER, NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -18,6 +18,9 @@ import { JobsComponent } from './components/jobs/jobs.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { HttpClientModule } from '@angular/common/http';
 import { UpskillComponent } from './components/upskill/upskill.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { HiringHomeComponent } from './components/hiring-home/hiring-home.component';
+
 
 
 
@@ -37,7 +40,8 @@ import { UpskillComponent } from './components/upskill/upskill.component';
     AppFooterComponent,
     JobsComponent,
     SignUpComponent,
-    UpskillComponent
+    UpskillComponent,
+    HiringHomeComponent
   ],
   imports: [
     BrowserModule,
@@ -45,7 +49,8 @@ import { UpskillComponent } from './components/upskill/upskill.component';
     FormsModule,
     ReactiveFormsModule,
     CKEditorModule,
-    HttpClientModule
+    HttpClientModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]

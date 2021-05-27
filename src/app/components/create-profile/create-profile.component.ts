@@ -3,6 +3,7 @@ import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import * as ClassicEditor from '@ckeditor/ckeditor5-angular';
+import { ApiService } from "../../shared/api.service";
 
 
 @Component({
@@ -26,7 +27,7 @@ export class CreateProfileComponent implements OnInit {
    });
 
 
-  constructor(private formBuilder: FormBuilder,private router: Router) { }
+  constructor(private formBuilder: FormBuilder,private router: Router,public api: ApiService) { }
 
   async ngOnInit() {
     this.userProfileForm = this.formBuilder.group({
@@ -36,7 +37,6 @@ export class CreateProfileComponent implements OnInit {
       emailId:[''],
       jobTitle:[''],
       location:[''],
-      resume:[''],
       summary:[''],
       experience:[''],
       education:['']
@@ -46,8 +46,16 @@ export class CreateProfileComponent implements OnInit {
    
 
   }
-onSubmit(){
-
+  createProfile(){
+    console.log("signing up....")
+    
+    this.api.createProfile(this.userProfileForm)
+        .subscribe((res)=>{
+          if(res["status"] == true){
+          console.log("user signup:")
+          this.router.navigateByUrl('/portfolio');
+          }
+        })
 }
 onFileChange(){
 

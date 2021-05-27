@@ -1,5 +1,8 @@
 <app-app-header></app-app-header>
 <div class="boxwrap">
+    <h3>Search Jobs</h3>
+    <hr>
+    <br>
     <form [formGroup]="jobSearchForm" (ngSubmit)="searchJobs()">
         <div class="form-row">
 
@@ -38,7 +41,7 @@
                         <div class="card-text">
                             {{job.jobTitle}}
                         </div>
-                        <button type="button" class="btn btn-primary">Button</button>
+                        <button type="button" class="btn btn-primary">Apply</button>
 
                     </div>
                 </div>

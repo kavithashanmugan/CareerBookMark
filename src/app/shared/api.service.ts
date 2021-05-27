@@ -29,4 +29,14 @@ export class ApiService {
     //   catchError(this.handleError)
     // )
   }
+
+  createProfile(UserDetails){
+    let formData:any = Object.assign(UserDetails.value)
+    console.log("user details..",formData)
+    return this.http.post('http://localhost:3000/api/createProfile',formData)
+  }
+
+  getProfile(){
+    
+  }
 }
