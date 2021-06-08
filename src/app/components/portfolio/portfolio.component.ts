@@ -31,9 +31,7 @@ export class PortfolioComponent implements OnInit {
   constructor(public api: ApiService) { }
 
   async ngOnInit() {
-    try {
-      this.portfolio = await this.api.getProfile();
-    } catch (err) {}
+   
   }
 
   getProfileDetails(){

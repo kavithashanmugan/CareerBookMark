@@ -25,17 +25,31 @@ export class JobsComponent implements OnInit {
 
   ngOnInit() {
     this.jobType=['Full Time','Part Time','Contract'];
+    this.getAllJobs();
     
   }
 
+  getAllJobs(){
+    console.log("getting all jobs")
+    this.api.getAllJobs()
+    .subscribe((res)=>{
+      console.log("res",res)
+      this.allJobs = res
+  })
+  }
+
   searchJobs(){
-this.searchResults=true;
-this.allJobs = [{"jobTitle":"Junior Developer","jobPostedOn":"May 02 2021","company":"ABS Solutions"},
-    {"jobTitle":"Blockchain Developer","jobPostedOn":"May 10 2021","company":"ABS Solutions"},
-    {"jobTitle":"Application Support","jobPostedOn":"May 22 2021","company":"ABS Solutions"},
-    {"jobTitle":"Frontend Developer","jobPostedOn":"May 14 2021","company":"ABS Solutions"},
-    {"jobTitle":"Java Developer","jobPostedOn":"May 18 2021","company":"ABS Solutions"}
-  
-  ];
+
   }
 }
+//   searchJobs(){
+// this.searchResults=true;
+// this.allJobs = [{"jobTitle":"Junior Developer","jobPostedOn":"May 02 2021","company":"ABS Solutions"},
+//     {"jobTitle":"Blockchain Developer","jobPostedOn":"May 10 2021","company":"ABS Solutions"},
+//     {"jobTitle":"Application Support","jobPostedOn":"May 22 2021","company":"ABS Solutions"},
+//     {"jobTitle":"Frontend Developer","jobPostedOn":"May 14 2021","company":"ABS Solutions"},
+//     {"jobTitle":"Java Developer","jobPostedOn":"May 18 2021","company":"ABS Solutions"}
+  
+//   ];
+//   }
+
