@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
-
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+import { FirebaseService } from './../../services/firebase.service';
+import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-app-header',
@@ -8,28 +10,41 @@ import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
   styleUrls: ['./app-header.component.css']
 })
 export class AppHeaderComponent implements OnInit {
-  userLogin:boolean=false;
+  userLogin:boolean;
+  email:any;
   closeResult: string;
-
-  constructor(private modalService: NgbModal) { }
-
-  ngOnInit(): void {
-  }
-  open(content) {
-    this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
-      this.closeResult = `Closed with: ${result}`;
-    }, (reason) => {
-      this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
-    });
-  }
-  private getDismissReason(reason: any): string {
-    if (reason === ModalDismissReasons.ESC) {
-      return 'by pressing ESC';
-    } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
-      return 'by clicking on a backdrop';
-    } else {
-      return  `with: ${reason}`;
-    }
-  }
+  signInUserForm = this.formBuilder.group({
+    emailId:[''],
+    password:['']
+  })
   
+  
+
+  constructor(private formBuilder: FormBuilder,private router: Router,public firebase : FirebaseService) { }
+
+  ngOnInit(){
+  
+    if(localStorage.getItem('user')){
+      this.userLogin = true;
+      this.email = ((JSON.parse(localStorage.getItem('user'))).email);
+    }
+   
+  }
+
+  hireNow(){
+    console.log("hiring home...")
+    this.router.navigateByUrl('/hiring-home');
+  }
+  async logout(){
+     await this.firebase.logout();
+     this.userLogin = false;
+    
+
+    
+  }
+  async login(){
+  await this.firebase.signIn(this.signInUserForm.get('emailId').value,this.signInUserForm.get('password').value)
+  console.log("user...",localStorage.getItem('user'));
+  this.router.navigateByUrl('/portfolio');
+  }
 }

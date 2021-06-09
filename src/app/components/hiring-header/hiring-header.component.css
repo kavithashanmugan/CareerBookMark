@@ -1,0 +1,129 @@
+.logo {
+    width: 275px;
+    height: 50px;
+    margin: 0px;
+}
+
+.container {
+    padding-left: 0px;
+    padding-right: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+.navbar-expand-md .navbar-nav .nav-link {
+    padding-right: 1rem;
+    padding-left: 1rem;
+}
+
+.nav-link {
+    font-size: 35px;
+    padding-left: 1%;
+    color: #eee;
+}
+
+.navbar-brand {
+    float: left;
+    margin-left: 0px;
+    padding-left: 0px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.topnav button {
+    background-color: transparent;
+    /* overflow: hidden; */
+    color: white;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.signUp {
+    background-color: mediumseagreen;
+    font-size: 20px;
+    padding: 1%;
+    color: white;
+    width: 130px;
+    height: 35px;
+    border-radius: 7px;
+    margin-top: 2%;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.navbar-dark {
+    background-color: black;
+}
+
+.hire .signUp {
+    background-color: blue;
+}
+
+.icon-user {
+    color: white;
+    font-size: 25px;
+    padding-bottom: 0px;
+    margin-top: 2%;
+    width: 50px;
+    height: 50px;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: rgba(255, 255, 255, .5);
+}
+
+#search input {
+    height: 45px;
+    font-size: 25px;
+    border-radius: 5px;
+}
+
+
+/* modal css */
+
+.modal-title {
+    font-weight: 400;
+}
+
+.modal-content {
+    width: 500px;
+    height: 250px;
+    position: absolute;
+    top: 50%;
+    /* left: 50%;
+    top: 50%; */
+}
+
+.modal-body {
+    margin-bottom: 10px;
+}
+
+.center-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70px;
+}
+
+.modal-body .input {
+    line-height: 2em;
+}
+
+.signInModalBtn {
+    width: 75px;
+}
+
+
+/* .modal-title {
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+} */
+
+#signInModal {
+    font-size: 15px;
+}

@@ -1,3 +1,4 @@
+import { FirebaseService } from './../../services/firebase.service';
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
@@ -17,11 +18,11 @@ export class SignUpComponent implements OnInit {
   status:boolean;
   show:boolean; 
   signUpUserForm = this.fb.group({
-    fullName:[''],
+    
     emailId:[''],
     password:['']
   })
-  constructor(private fb:FormBuilder,public api: ApiService,private router: Router) { 
+  constructor(private fb:FormBuilder,public api: ApiService,private router: Router,public firebase : FirebaseService) { 
     
   }
 
@@ -36,17 +37,26 @@ export class SignUpComponent implements OnInit {
     console.log("signing up..");
     console.log(this.signUpUserForm.value);
   }
+  async signUp(){
+    console.log(this.signUpUserForm.get('emailId').value)
+await this.firebase.signUp(this.signUpUserForm.get('emailId').value,this.signUpUserForm.get('password').value)
+if(this.firebase.isLoggedIn)
+{console.log("signup successful")
+this.router.navigateByUrl('/create-profile');
+}
+
+  }
 
  
-  signUp(){
-    console.log("signing up....")
+//   signUp(){
+//     console.log("signing up....")
     
-this.api.signUp(this.signUpUserForm)
-    .subscribe((res)=>{
-      if(res["status"] == true){
-      console.log("user signup:")
-      this.router.navigateByUrl('/create-profile');
-      }
-    })
-  }
+// this.api.signUp(this.signUpUserForm)
+//     .subscribe((res)=>{
+//       if(res["status"] == true){
+//       console.log("user signup:")
+//       this.router.navigateByUrl('/create-profile');
+//       }
+//     })
+//   }
 }
