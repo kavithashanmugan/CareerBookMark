@@ -47,6 +47,12 @@ export class ApiService {
     return this.http.get('http://localhost:4000/api/getProfile/'+ userId)
     
   }
+  getAllProfiles(){
+    let params = new HttpParams();
+    
+    return this.http.get('http://localhost:4000/api/getAllProfiles')
+    
+  }
 
   getAllJobs(){
     return this.http.get('http://localhost:4000/api/getAllJobs')

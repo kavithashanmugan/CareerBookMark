@@ -32,14 +32,17 @@ export class PortfolioComponent implements OnInit {
   constructor(public api: ApiService,private _Activatedroute:ActivatedRoute,public firebase : FirebaseService) { }
 
   async ngOnInit() {
+
+    console.log("page loading...")
     if(this.firebase.isLoggedIn==true){
       let data = (JSON.parse(localStorage.getItem('user')));
-
+console.log(localStorage.getItem('user'))
       console.log("data",data)
       this.getProfileDetails(data["uid"]);
       this.portfolioFlag = true
     }
     this.userId=this._Activatedroute.snapshot.paramMap.get("userId");
+    console.log("userId",this.userId)
     if(this.userId && this.firebase.isLoggedIn==true){
       this.getProfileDetails(this.userId); 
       this.portfolioFlag = true
@@ -48,6 +51,7 @@ export class PortfolioComponent implements OnInit {
   }
 
   getProfileDetails(userId){
+    console.log("hitting profile......")
 this.api.getProfile(userId)
     .subscribe((res)=>{
       if(res["status"] == true && res["result"]!=null){

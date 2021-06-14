@@ -1,8 +1,9 @@
 <app-app-header></app-app-header>
+
 <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+<!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
     Launch demo modal
-  </button>
+  </button> -->
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -27,13 +28,18 @@
 <div>
     <div class="container">
         <div class="row">
-            <div class="col-sm-4">
-                <div class="card">
+            <div *ngFor="let profile of allProfiles;">
+                <div class="col-sm-4">
 
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                    <div class="card">
+
+                        <div class="card-body">
+                            <h5 class="card-title">{{profile.fullName}}</h5>
+                            <p class="card-text">{{profile.jobTitle}}</p>
+                            <p class="card-text"><small class="text-muted">{{profile.emailId}}</small></p>
+                            <button>Connect</button>
+                        </div>
+
                     </div>
                 </div>
             </div>

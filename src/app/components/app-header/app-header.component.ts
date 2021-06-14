@@ -41,6 +41,7 @@ export class AppHeaderComponent implements OnInit {
   }
   async logout(){
      await this.firebase.logout();
+    
      this.userLogin = false;
   }
   async login(){

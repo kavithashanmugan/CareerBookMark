@@ -1,25 +1,25 @@
 <app-app-header></app-app-header>
 <div *ngIf=portfolioFlag>
     <div class="container-fluid portfolio-page">
-        <div class="row" *ngFor="let data of portfolio">
+        <div class="row">
             <div class="col-md-9 portfolio">
                 <div class="jumbotron clearfix">
                     <button type="button" class="btn btn-secondary float-right" (click)="updateProfile()"><i class='fas fa-pencil-alt' style='font-size:15px'></i></button>
 
                     <h2 id="name">
-                        {{data.fullName}}
+                        {{portfolio.fullName}}
                     </h2>
                     <p id="title" class="clearfix">
-                        {{data.jobTitle}}
+                        {{portfolio.jobTitle}}
 
-                        <a class="float-right" href="http://www.google.com">{{data.website}}</a>
+                        <a class="float-right" href="http://www.google.com">{{portfolio.website}}</a>
                     </p>
                     <p id="location">
-                        {{data.location}}
+                        {{portfolio.location}}
                     </p>
                     <hr>
                     <p>
-                        {{data.summary}} </p>
+                        {{portfolio.summary}} </p>
                 </div>
 
                 <div class="jumbotron clearfix">
@@ -29,7 +29,7 @@
                     </h2>
                     <hr>
                     <p>
-                        {{data.experience}} </p>
+                        {{portfolio.experience}} </p>
 
                 </div>
                 <div class="jumbotron clearfix">
@@ -39,7 +39,7 @@
                     </h2>
                     <hr>
                     <p>
-                        {{data.education}} </p>
+                        {{portfolio.education}} </p>
 
                 </div>
                 <div class="jumbotron clearfix">
@@ -49,7 +49,7 @@
                     </h2>
                     <hr>
                     <p>
-                        {{data.skills}} </p>
+                        {{portfolio.skills}} </p>
 
                 </div>
             </div>
