@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 import { ApiService } from "../../shared/api.service";
+import { FirebaseService } from './../../services/firebase.service';
 // import { ApiServiceService } from '../../services/api-service.service';
 
 interface Portfolio{
@@ -13,7 +14,8 @@ interface Portfolio{
     location:String;
     summary:String;
     experience:String;
-    education:String
+    education:String;
+    skills:String;
 
 }
 
@@ -24,17 +26,43 @@ interface Portfolio{
 })
 export class PortfolioComponent implements OnInit {
 
-  portfolio?: Portfolio;
-
-  Fullname:any = "Kavitha Shanmugan";
-  Title:any = "Blockchain Developer"
-  constructor(public api: ApiService) { }
+  portfolio:any=[];
+  portfolioFlag:boolean=false;
+  userId:any;
+  constructor(public api: ApiService,private _Activatedroute:ActivatedRoute,public firebase : FirebaseService) { }
 
   async ngOnInit() {
-   
+    if(this.firebase.isLoggedIn==true){
+      let data = (JSON.parse(localStorage.getItem('user')));
+
+      console.log("data",data)
+      this.getProfileDetails(data["uid"]);
+      this.portfolioFlag = true
+    }
+    this.userId=this._Activatedroute.snapshot.paramMap.get("userId");
+    if(this.userId && this.firebase.isLoggedIn==true){
+      this.getProfileDetails(this.userId); 
+      this.portfolioFlag = true
+    }
+ 
   }
 
-  getProfileDetails(){
+  getProfileDetails(userId){
+this.api.getProfile(userId)
+    .subscribe((res)=>{
+      if(res["status"] == true && res["result"]!=null){
+        console.log("result...",res["result"])
+      this.portfolio = res["result"]
+      
+      }
+    })
+  }
+
+  updateProfile(){
+    alert("updated")
+  }
+
+  getMatchingJobs(){
 
   }
 }

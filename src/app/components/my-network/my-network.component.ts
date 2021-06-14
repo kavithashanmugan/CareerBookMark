@@ -12,7 +12,11 @@ export class MyNetworkComponent implements OnInit {
 
   constructor(private modalService: NgbModal) {}
 
-  ngOnInit(): void {
+  ngOnInit(){
+  }
+
+  getAllProfiles(){
+    
   }
  
 }

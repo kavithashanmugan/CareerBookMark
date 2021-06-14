@@ -20,6 +20,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { UpskillComponent } from './components/upskill/upskill.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HiringHomeComponent } from './components/hiring-home/hiring-home.component';
+import { CreateCompanyProfleComponent } from './components/create-company-profle/create-company-profle.component';
+import { CompanyPortfolioComponent } from './components/company-portfolio/company-portfolio.component';
+import { HiringHeaderComponent } from './components/hiring-header/hiring-header.component';
+import { HomeComponent } from './components/home/home.component';
+import { AngularFireModule } from '@angular/fire';
 
 
 
@@ -41,7 +46,11 @@ import { HiringHomeComponent } from './components/hiring-home/hiring-home.compon
     JobsComponent,
     SignUpComponent,
     UpskillComponent,
-    HiringHomeComponent
+    HiringHomeComponent,
+    CreateCompanyProfleComponent,
+    CompanyPortfolioComponent,
+    HiringHeaderComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -50,7 +59,15 @@ import { HiringHomeComponent } from './components/hiring-home/hiring-home.compon
     ReactiveFormsModule,
     CKEditorModule,
     HttpClientModule,
-    NgbModule
+    NgbModule,
+    AngularFireModule.initializeApp({
+      apiKey: "AIzaSyBIqCDamgsiM3blOHr-0dSEEN46tsrnLFI",
+      authDomain: "careerbookmark-315000.firebaseapp.com",
+      projectId: "careerbookmark-315000",
+      storageBucket: "careerbookmark-315000.appspot.com",
+      messagingSenderId: "350001668933",
+      appId: "1:350001668933:web:f2eccf5e9269c53005942c"
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -19,7 +19,7 @@
 .nav-link {
     font-size: 28px;
     padding-left: 1%;
-    /* color: #eee; */
+    color: #eee;
 }
 
 .navbar-brand {
@@ -32,8 +32,17 @@
     box-sizing: border-box;
 }
 
-#login {
-    background-color: mediumseagreen !important;
+.topnav button {
+    background-color: transparent;
+    /* overflow: hidden; */
+    color: white;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.signUp {
+    background-color: mediumseagreen;
     font-size: 20px;
     padding: 1%;
     color: white;
@@ -48,15 +57,17 @@
     background-color: black;
 }
 
-#hire {
-    background-color: blue !important;
-    font-size: 20px;
+.hire .signUp {
+    background-color: blue;
+}
+
+.icon-user {
     color: white;
-    width: 130px;
-    height: 35px;
-    border-radius: 7px;
-    margin-top: 3%;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 25px;
+    padding-bottom: 0px;
+    margin-top: 2%;
+    width: 50px;
+    height: 50px;
 }
 
 a:hover {
@@ -83,7 +94,7 @@ a:hover {
     position: absolute;
     top: 50%;
     /* left: 50%;
-top: 50%; */
+    top: 50%; */
 }
 
 .modal-body {
@@ -97,15 +108,37 @@ top: 50%; */
     height: 70px;
 }
 
-.dropdwn {
-    padding: 2px;
-    margin: 2px;
-    width: auto;
-    justify-content: center;
+.modal-body .input {
+    line-height: 2em;
 }
 
-.dropdwn .button {
+.signInModalBtn {
+    width: 75px;
+}
+
+
+/* .modal-title {
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
     align-items: center;
+} */
+
+#signInModal {
+    font-size: 15px;
+}
+
+#login {
+    background-color: mediumseagreen !important;
+    font-size: 20px;
+    padding: 1%;
+    margin-right: 5%;
+    color: white;
+    width: 130px;
+    height: 35px;
+    border-radius: 7px;
+    margin-top: 2%;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 @media (max-width: 600px) {
@@ -125,7 +158,8 @@ top: 50%; */
 
 .dropdown-menu {
     padding-top: 12px;
-    width: 25em;
+    width: 300px !important;
+    margin-right: 10px;
 }
 
 .navbar .dropdown-menu {

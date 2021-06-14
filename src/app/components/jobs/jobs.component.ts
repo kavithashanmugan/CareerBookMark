@@ -1,7 +1,7 @@
+import { AdminComponent } from './../admin/admin.component';
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
 import { ApiService } from "../../shared/api.service";
 @Component({
   selector: 'app-jobs',
@@ -12,6 +12,7 @@ export class JobsComponent implements OnInit {
   searchResults:boolean=false;
   jobType:any
   allJobs:any 
+  githubJobs:any
 
   
   constructor(private fb:FormBuilder,public api: ApiService,private router: Router) {
@@ -37,7 +38,16 @@ export class JobsComponent implements OnInit {
       this.allJobs = res
   })
   }
-
+async getGithubJobs(){
+  console.log("hitting jobs")
+  // this.githubJobs = await axios.get('https://jobs.github.com/positions.json?search=node')
+  // console.log("github jobs",this.githubJobs);
+  // this.api.getGithubJobs()
+  // .subscribe((res)=>{
+  //   this.githubJobs = res
+  //   this.searchResults = true
+  // })
+}
   searchJobs(){
 
   }

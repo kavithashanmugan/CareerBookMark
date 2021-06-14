@@ -1,23 +1,26 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import { FirebaseService } from './../../services/firebase.service';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Router } from '@angular/router';
 @Component({
-  selector: 'app-hiring-home',
-  templateUrl: './hiring-home.component.html',
-  styleUrls: ['./hiring-home.component.css']
+  selector: 'app-home',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.css']
 })
-export class HiringHomeComponent implements OnInit {
-  isSignedIn = false;
+export class HomeComponent implements OnInit {
+isSignedIn = false;
   constructor(public firebase : FirebaseService,private router: Router) { }
-
-  ngOnInit() {
+  
+  ngOnInit(){
     if(localStorage.getItem('user') !== null)
     this.isSignedIn = true;
     else
     this.isSignedIn = false;
   }
+
   signUp(){
     console.log("signing up")
     this.router.navigateByUrl('/sign-up')
   }
+
 }

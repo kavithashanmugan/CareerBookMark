@@ -1,0 +1,10 @@
+.card {
+    width: 150px;
+    height: 150px;
+    padding: 5px;
+    margin: 5px;
+}
+
+card-text {
+    word-wrap: break-word;
+}

@@ -3,7 +3,7 @@
     <h3>Search Jobs</h3>
     <hr>
     <br>
-    <form [formGroup]="jobSearchForm" (ngSubmit)="searchJobs()">
+    <form [formGroup]="jobSearchForm" (ngSubmit)="getGithubJobs()">
         <div class="form-row">
 
             <div class="form-group col-sm-4 mr-4">
@@ -66,6 +66,29 @@
                         </div>
                         <button type="button" class="btn btn-primary">Apply</button>
 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="searchResults">
+        <div class="resultBox">
+            <h3>Search Results</h3>
+            <hr>
+            <div class="row">
+                <div class="col-sm-3" *ngFor="let job of githubJobs">
+                    <div class="card">
+                        <!-- <img src="https://mdbootstrap.com/img/new/standard/nature/184.jpg" class="card-img-top"> -->
+                        <div class="card-body">
+                            <div class="card-title">
+                                {{job.title}}
+                            </div>
+                            <div class="card-text">
+                                {{job.company}}
+                            </div>
+                            <button type="button" class="btn btn-primary">Apply</button>
+
+                        </div>
                     </div>
                 </div>
             </div>

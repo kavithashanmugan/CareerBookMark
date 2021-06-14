@@ -9,7 +9,8 @@ export class UpskillComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+    console.log("user logged in",localStorage.getItem('user'))
   }
 
 }

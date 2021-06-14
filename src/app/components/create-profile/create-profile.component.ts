@@ -13,6 +13,7 @@ import { ApiService } from "../../shared/api.service";
 })
 export class CreateProfileComponent implements OnInit {
   public Editor = ClassicEditor;
+  userId:any;
   userProfileForm = new FormGroup({
     fullName:new FormControl('',Validators.required),
     phoneNumber:new FormControl('',Validators.required),
@@ -22,15 +23,19 @@ export class CreateProfileComponent implements OnInit {
     location:new FormControl('',Validators.required),
     summary:new FormControl('',Validators.required),
     experience:new FormControl('',Validators.required),
-    education:new FormControl('',Validators.required)
+    education:new FormControl('',Validators.required),
+    skills:new FormControl('',Validators.required)
     
    });
 
 
-  constructor(private formBuilder: FormBuilder,private router: Router,public api: ApiService) { }
+  constructor(private formBuilder: FormBuilder,private router: Router,public api: ApiService,private _Activatedroute:ActivatedRoute) { }
 
   async ngOnInit() {
+    this.userId=this._Activatedroute.snapshot.paramMap.get("userId");
+console.log("userid",this.userId)
     this.userProfileForm = this.formBuilder.group({
+      userId:this.userId,
       fullName: [''],
       phoneNumber:[''],
       website:[''],
@@ -39,7 +44,8 @@ export class CreateProfileComponent implements OnInit {
       location:[''],
       summary:[''],
       experience:[''],
-      education:['']
+      education:[''],
+      skills:['']
   }, {
       //validator: MustMatch('password', 'confirmPassword')
   });
@@ -48,16 +54,14 @@ export class CreateProfileComponent implements OnInit {
   }
   createProfile(){
     console.log("signing up....")
-    
+    console.log(this.userProfileForm)
     this.api.createProfile(this.userProfileForm)
         .subscribe((res)=>{
           if(res["status"] == true){
-          console.log("user signup:")
-          this.router.navigateByUrl('/portfolio');
+          console.log("user portfolio created successfully:")
+          this.router.navigate(['/portfolio',this.userId]);
           }
         })
 }
-onFileChange(){
 
-}
 }
