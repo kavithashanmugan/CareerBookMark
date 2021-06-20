@@ -1,1 +1,61 @@
-<p>create-company-profle works!</p>
+<app-app-header>
+</app-app-header>
+<div>
+
+    <form [formGroup]="companyProfileForm " (ngSubmit)="createCompanyProfile() ">
+
+        <div class="userForm ">
+            <!-- <div class="center">
+                <h1>Create Profile</h1>
+            </div> -->
+            <div class="row ">
+                <div class="form-group col-sm-4 ">
+                    <label for="companyName ">Company Name:</label>
+                    <input type="text " id="companyName " placeholder="Company Name " formControlName="companyName" class="form-control ">
+                </div>
+                <div class="form-group col-sm-4 ">
+                    <label for="companyType ">Company Type:</label>
+                    <input type="text " id="companyType " placeholder="Company Type" formControlName="companyType" class="form-control ">
+                </div>
+                <div class="form-group col-sm-4 ">
+                    <label for="companyWebsite ">Web Site:</label>
+                    <input type="text " id="companyWebsite " placeholder="Company Web Site " formControlName="companyWebsite" class="form-control ">
+                </div>
+            </div>
+            <div class="row ">
+                <div class="form-group col-sm-4 ">
+                    <label for="location ">Location:</label>
+                    <input type="text " id="location" placeholder="location" formControlName="location" class="form-control ">
+                </div>
+
+                <div class="form-group col-sm-4 ">
+                    <label for="Industry ">Industry:</label>
+                    <input type="text " id="Industry " placeholder="Industry" formControlName="Industry" class="form-control " />
+                </div>
+                <div class="form-group col-sm-4 ">
+                    <label for="employees ">Number of Employees:</label>
+                    <input type="text " id="employees" placeholder="employees" formControlName="employees" class="form-control " />
+                </div>
+            </div>
+
+            <!-- <div class="row ">
+                <div class="form-group col-sm-12 ">
+                    <label for="location ">Location:</label>
+                    <textarea name="location " formControlName="location" class="textarea " class="form-control "></textarea>
+                </div>
+            </div> -->
+            <div class="row ">
+                <div class="form-group col-sm-12 ">
+                    <label for="companyDetails ">Company Details:</label>
+                    <textarea name="companyDetails " formControlName="companyDetails" class="textarea" id="companyDetails" class="form-control "></textarea>
+                </div>
+            </div>
+
+            <div class="row ">
+                <div class="col-sm-12 text-center ">
+                    <button class="submitBtn ">Submit</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

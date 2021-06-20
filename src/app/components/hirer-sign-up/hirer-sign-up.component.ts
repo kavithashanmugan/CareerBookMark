@@ -4,22 +4,23 @@ import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ApiService } from "../../shared/api.service";
+
 @Component({
-  selector: 'app-sign-up',
-  templateUrl: './sign-up.component.html',
-  styleUrls: ['./sign-up.component.css']
+  selector: 'app-hirer-sign-up',
+  templateUrl: './hirer-sign-up.component.html',
+  styleUrls: ['./hirer-sign-up.component.css']
 })
-export class SignUpComponent implements OnInit {
+export class HirerSignUpComponent implements OnInit {
   isLoggedIn: boolean = false;
   userId:any;
-  // signUpUserForm = new FormGroup({
+  // signUpHirerForm = new FormGroup({
   //   name:new FormControl('',Validators.required),
   //   email:new FormControl('',Validators.required),
   //   password:new FormControl('',Validators.required)
   // })
   status: boolean;
   show: boolean;
-  signUpUserForm = this.fb.group({
+  signUpHirerForm = this.fb.group({
 
     emailId: [''],
     password: ['']
@@ -37,11 +38,11 @@ export class SignUpComponent implements OnInit {
   }
   onSubmit() {
     console.log("signing up..");
-    console.log(this.signUpUserForm.value);
+    console.log(this.signUpHirerForm.value);
   }
   async signUp() {
-    console.log(this.signUpUserForm.get('emailId').value)
-    await this.firebase.signUp(this.signUpUserForm.get('emailId').value, this.signUpUserForm.get('password').value)
+    console.log(this.signUpHirerForm.get('emailId').value)
+    await this.firebase.signUp(this.signUpHirerForm.get('emailId').value, this.signUpHirerForm.get('password').value)
       .then((res) => {
         console.log("resssss", res)
         this.isLoggedIn = true
@@ -51,13 +52,12 @@ export class SignUpComponent implements OnInit {
         console.log("userId is",this.userId)
         let userIdObj = { "userId":res.user.uid}
         let formData:any = Object.assign({},userIdObj)
-        this.api.signUpFireBase(formData)
+        this.api.signUpCompanyFireBase(formData)
           .subscribe((res) => {
             if (res["status"] == true) {
               console.log("user signup:",this.userId)
               this.firebase.isLoggedIn = true;
-              localStorage.setItem('userId', this.userId)
-              this.router.navigate(['/create-profile',localStorage.getItem('userId')]);
+              this.router.navigate(['/create-company-profile',this.userId]);
             }
             else{
               alert("error in signing up")
@@ -86,7 +86,7 @@ export class SignUpComponent implements OnInit {
 //   signUp(){
 //     console.log("signing up....")
 
-// this.api.signUp(this.signUpUserForm)
+// this.api.signUp(this.signUpHirerForm)
 //     .subscribe((res)=>{
 //       if(res["status"] == true){
 //       console.log("user signup:")

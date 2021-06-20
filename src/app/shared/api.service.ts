@@ -34,11 +34,19 @@ export class ApiService {
     //   catchError(this.handleError)
     // )
   }
+  signUpCompanyFireBase(company){
+    return this.http.post('http://localhost:4000/api/signUpCompanyFireBase',company)
+  }
 
   createProfile(UserDetails){
     let formData:any = Object.assign(UserDetails.value)
     console.log("user details..",formData)
     return this.http.post('http://localhost:4000/api/createProfile',formData)
+  }
+  createCompanyProfile(CompanyDetails){
+    let formData:any = Object.assign(CompanyDetails.value)
+    console.log("user details..",formData)
+    return this.http.post('http://localhost:4000/api/createCompanyProfile',formData)
   }
 
   getProfile(userId){
@@ -57,7 +65,21 @@ export class ApiService {
   getAllJobs(){
     return this.http.get('http://localhost:4000/api/getAllJobs')
   }
-  getGithubJobs(){
-    return this.http.get('https://jobs.github.com/positions.json?search=node',this.httpOptions)
+  
+  postJob(JobDetails){
+    let formData:any = Object.assign(JobDetails.value)
+    console.log("job details..",formData)
+    return this.http.post('http://localhost:4000/api/postJob',formData)
+  }
+  searchJobs(JobSearchForm){
+    let formData:any = Object.assign(JobSearchForm.value)
+    console.log("job search..",formData)
+    return this.http.post('http://localhost:4000/api/searchJobs',formData)
+  }
+
+  updateProfile(ProfileForm){
+    let formData:any = Object.assign(ProfileForm.value)
+    console.log("job search..",formData)
+    return this.http.post('http://localhost:4000/api/updateProfile',formData)
   }
 }

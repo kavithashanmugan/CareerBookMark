@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import * as ClassicEditor from '@ckeditor/ckeditor5-angular';
+import { ApiService } from "../../shared/api.service";
 
 @Component({
   selector: 'app-create-company-profle',
@@ -6,10 +11,51 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./create-company-profle.component.css']
 })
 export class CreateCompanyProfleComponent implements OnInit {
+  public Editor = ClassicEditor;
+  userId:any;
+  companyProfileForm = new FormGroup({
+    
+    emailId:new FormControl('',Validators.required),
+    companyName:new FormControl('',Validators.required),
+    companyType:new FormControl('',Validators.required),
+    companyWebsite:new FormControl('',Validators.required),
+    Industry:new FormControl('',Validators.required),
+    location:new FormControl('',Validators.required),
+    companyDetails:new FormControl('',Validators.required)
+    
+   });
 
-  constructor() { }
 
-  ngOnInit(): void {
+  constructor(private formBuilder: FormBuilder,private router: Router,public api: ApiService,private _Activatedroute:ActivatedRoute) { }
+
+  async ngOnInit() {
+    this.userId=this._Activatedroute.snapshot.paramMap.get("userId");
+console.log("userid",this.userId)
+    this.companyProfileForm = this.formBuilder.group({
+      userId:this.userId,  
+      emailId:[''],
+      companyName: [''],
+      companyType:[''],
+      companyWebsite:[''],
+      Industry:[''],
+      location:[''],
+      companyDetails:['']
+  }, {
+      //validator: MustMatch('password', 'confirmPassword')
+  });
+   
+
   }
+  createCompanyProfile(){
+    console.log("signing up....")
+    console.log(this.companyProfileForm)
+    this.api.createCompanyProfile(this.companyProfileForm)
+        .subscribe((res)=>{
+          if(res["status"] == true){
+          console.log("company portfolio created successfully:")
+          this.router.navigate(['/company-portfolio',this.userId]);
+          }
+        })
+}
 
 }

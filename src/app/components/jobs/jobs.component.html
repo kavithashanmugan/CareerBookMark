@@ -1,92 +1,126 @@
 <app-app-header></app-app-header>
-<div class="boxwrap">
-    <h3>Search Jobs</h3>
-    <hr>
-    <br>
-    <form [formGroup]="jobSearchForm" (ngSubmit)="getGithubJobs()">
-        <div class="form-row">
 
-            <div class="form-group col-sm-4 mr-4">
-                <input class="form-control" formControlName="jobKeyWords" placeholder="Job Key Words" type="text">
-            </div>
-            <div class="form-group col-sm-4 mr-4">
-                <input class="form-control" formControlName="location" placeholder="Location" type="text">
-            </div>
-            <div class="form-group col-sm-3 mr-4">
-                <select class="form-control" formControlName="jobType" placeholder="Location">
+<h3>Search Jobs</h3>
+<hr>
+<br>
+<section>
+    <div class="container">
+        <form [formGroup]="jobSearchForm" (ngSubmit)="searchJobs()">
+            <!-- <fieldset> -->
+
+            <div class="row">
+
+                <div class="col-md-4 col-sm-4">
+                    <input class="form-control" formControlName="jobKeyWords" placeholder="Job Key Words" type="text">
+                </div>
+                <div class="col-md-3 col-sm-3">
+                    <input class="form-control" formControlName="location" placeholder="Location" type="text">
+                </div>
+                <div class="col-md-3 col-sm-3">
+                    <select class="form-control" formControlName="jobType" placeholder="Location">
                     <option hidden [value]="" selected>Job Type</option>
                     <option *ngFor="let type of jobType ">{{type}}</option>
                 </select>
+                </div>
+
+                <div class="col-md-2 col-sm-2">
+                    <button type="submit" class="btn theme-btn">Search Jobs</button>
+                </div>
             </div>
+            <!-- </fieldset> -->
+        </form>
+    </div>
+</section>
+<section>
+    <div class="container">
+        <div *ngIf="searchResults">
+            <div class="resultBox">
+                <h3>Search Results</h3>
+                <hr>
+                <div class="row">
+                    <div class="col-sm-3" *ngFor="let job of allJobs">
+                        <div class="card text-center" style="width: 18rem;">
+                            <!-- <img src="https://mdbootstrap.com/img/new/standard/nature/184.jpg" class="card-img-top"> -->
+                            <div class="card-body">
+                                <h5 class="card-title"> {{job.jobTitle}} </h5>
+                                <div class="card-text">
+                                    Company
+                                </div>
+                                <button type="button" class="btn btn-primary">view</button>
 
-            <div class="form-group ">
-                <button type="submit" class="btn btn-primary">Search Jobs</button>
-            </div>
-
-        </div>
-    </form>
-</div>
-<div *ngIf="searchResults">
-    <div class="resultBox">
-        <h3>Search Results</h3>
-        <hr>
-        <div class="row">
-            <div class="col-sm-3" *ngFor="let job of allJobs">
-                <div class="card">
-                    <!-- <img src="https://mdbootstrap.com/img/new/standard/nature/184.jpg" class="card-img-top"> -->
-                    <div class="card-body">
-                        <div class="card-title">
-                            {{job.jobTitle}}
+                            </div>
                         </div>
-                        <div class="card-text">
-                            Company
-                        </div>
-                        <button type="button" class="btn btn-primary">view</button>
-
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
+</section>
 <div>
-    <div class="resultBox">
-        <h3>All Jobs</h3>
-        <hr>
-        <div class="row">
-            <div class="col-sm-3" *ngFor="let job of allJobs">
-                <div class="card">
-                    <!-- <img src="https://mdbootstrap.com/img/new/standard/nature/184.jpg" class="card-img-top"> -->
-                    <div class="card-body">
-                        <div class="card-title">
-                            {{job.jobTitle}}
+    <section>
+        <div class="container">
+            <h3>All Jobs</h3>
+            <hr>
+            <div class="row">
+
+                <div class="col-sm-3 col-md-3 py-2" *ngFor="let job of allJobs">
+                    <div class="card job-card-body margin:0 auto;">
+                        <div class="row">
+                            <h5 id="job-card-header">
+                                <div class="col-sm-6"> <img class="img-company" src="../../../assets/images/companylogo.png" alt="Card image cap"></div>
+                                <button class="save-job"><i class="fas fa-bookmark"></i>
+
+                            </button>
+
+                            </h5>
                         </div>
-                        <div class="card-text">
-                            Company
+
+
+                        <!-- <img src="https://mdbootstrap.com/img/new/standard/nature/184.jpg" class="card-img-top"> -->
+                        <div class="card-body d-flex flex-column">
+                            <h2 class="card-title">
+                                {{job.jobTitle}}
+                            </h2>
+                            <h3 class="card-text">
+                                {{job.Company}}
+                            </h3>
+                            <p class="card-text">
+                                {{job.jobLocation}}
+                            </p>
+                            <!-- //job.jobPostedDate -->
+                            <p>Job posted date : {{ job.jobPostedDate | dateAgo}}</p>
+
+
                         </div>
-                        <button type="button" class="btn btn-primary">Apply</button>
+                        <div class="card-footer">
+                            <div style="text-align: center;">
+                                <button type="button" class="btn btn-primary btn-apply" style="padding:5px;">Apply</button>
+                            </div>
+                        </div>
 
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
     <div *ngIf="searchResults">
         <div class="resultBox">
             <h3>Search Results</h3>
             <hr>
             <div class="row">
-                <div class="col-sm-3" *ngFor="let job of githubJobs">
-                    <div class="card">
-                        <!-- <img src="https://mdbootstrap.com/img/new/standard/nature/184.jpg" class="card-img-top"> -->
-                        <div class="card-body">
-                            <div class="card-title">
+                <div class="col-md-4" *ngFor="let job of githubJobs;">
+                    <div class="card p-3 mb-2">
+                        <!-- <img src="https://mdbootstrap.com/img/new/standard/nature/184.jpg " class="card-img-top "> -->
+                        <div class="card-body mr-auto">
+                            <h2 class="card-title" style="align-items: center; ">
                                 {{job.title}}
-                            </div>
-                            <div class="card-text">
+                            </h2>
+                            <p class="card-text ">
                                 {{job.company}}
+                            </p>
+                            <div class="card-footer">
+                                <button type="button " class="btn btn-primary " (click)="applyJob()">Apply</button>
                             </div>
-                            <button type="button" class="btn btn-primary">Apply</button>
 
                         </div>
                     </div>

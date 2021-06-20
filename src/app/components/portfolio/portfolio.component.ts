@@ -29,7 +29,8 @@ export class PortfolioComponent implements OnInit {
   portfolio:any=[];
   portfolioFlag:boolean=false;
   userId:any;
-  constructor(public api: ApiService,private _Activatedroute:ActivatedRoute,public firebase : FirebaseService) { }
+  editProfile:boolean=false;
+  constructor(public api: ApiService,private _Activatedroute:ActivatedRoute,public firebase : FirebaseService,private router: Router) { }
 
   async ngOnInit() {
 
@@ -43,7 +44,7 @@ console.log(localStorage.getItem('user'))
     }
     this.userId=this._Activatedroute.snapshot.paramMap.get("userId");
     console.log("userId",this.userId)
-    if(this.userId && this.firebase.isLoggedIn==true){
+    if(this.userId!=undefined && this.firebase.isLoggedIn==true){
       this.getProfileDetails(this.userId); 
       this.portfolioFlag = true
     }
@@ -63,8 +64,20 @@ this.api.getProfile(userId)
   }
 
   updateProfile(){
-    alert("updated")
+    console.log("routing to edit profile")
+    this.router.navigate(['/edit-profile',localStorage.getItem('userId')]);
+    //this.editProfile = true;
+   
   }
+
+  updateExperience(){}
+
+
+  updateEducation(){}
+  updateSkills(){
+
+  }
+  
 
   getMatchingJobs(){
 

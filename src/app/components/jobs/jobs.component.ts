@@ -13,6 +13,8 @@ export class JobsComponent implements OnInit {
   jobType:any
   allJobs:any 
   githubJobs:any
+  jobSearchResult:any
+  now = new Date();
 
   
   constructor(private fb:FormBuilder,public api: ApiService,private router: Router) {
@@ -27,6 +29,8 @@ export class JobsComponent implements OnInit {
   ngOnInit() {
     this.jobType=['Full Time','Part Time','Contract'];
     this.getAllJobs();
+    this.now;
+    console.log("thisss",this.now)
     
   }
 
@@ -49,7 +53,21 @@ async getGithubJobs(){
   // })
 }
   searchJobs(){
+    console.log(this.jobSearchForm)
+    this.api.searchJobs(this.jobSearchForm)
+        .subscribe((res)=>{
+          if(res["status"] == true){
 
+            this.searchResults = true;
+this.jobSearchResult= res["result"];
+         // console.log("user portfolio created successfully:")
+          //this.router.navigate(['/portfolio',this.userId]);
+          }
+        })
+  }
+  applyJob(){
+    console.log("applying for job")
+    alert("Applied for job successfully")
   }
 }
 //   searchJobs(){

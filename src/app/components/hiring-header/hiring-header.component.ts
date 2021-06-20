@@ -21,6 +21,12 @@ export class HiringHeaderComponent implements OnInit {
   constructor(private formBuilder: FormBuilder,private router: Router,public firebase : FirebaseService) { }
 
   ngOnInit(){
+    console.log("hey",this.firebase.isLoggedIn)
+    if(this.firebase.isLoggedIn == true){
+      this.userLogin = true;
+      console.log("userLogin",this.userLogin)
+      this.email = ((JSON.parse(localStorage.getItem('user'))).email);
+    }
   }
   async login(){
     await this.firebase.signIn(this.signInUserForm.get('emailId').value,this.signInUserForm.get('password').value)

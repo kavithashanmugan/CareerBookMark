@@ -8,9 +8,9 @@
         <div class="container">
             <div class="row text-white">
                 <div class="col-lg-5 mx-auto text-center form p-4">
-                    <h1 class="display-4 py-2 text-truncate">Welcome to CareerBookMark</h1>
+                    <h1 class="display-4 py-2 text-truncate">Hiring Platform</h1>
                     <div class="px-2">
-                        <form [formGroup]="signUpUserForm" class="justify-content-center" (ngSubmit)="signUp()">
+                        <form [formGroup]="signUpHirerForm" class="justify-content-center" (ngSubmit)="signUp()">
                             <!--  -->
                             <!-- <div class="form-group">
                                 <div class="input-container">
@@ -29,7 +29,7 @@
                             <div class="form-group">
                                 <div class="input-container">
                                     <label class="sr-only">Password</label>
-                                    <input type="password" class="form-control" formControlName="password" placeholder="password">
+                                    <input type="password" class="form-control" formControlName="password" placeholder="Password">
                                     <button (click)="showPassword()">
                                         <i class="fa fa-eye icon" aria-hidden="true" *ngIf="!show"></i>
                                         <i class="fa fa-eye-slash icon" aria-hidden="true" *ngIf="show"></i>
@@ -37,7 +37,7 @@
                                 </div>
                             </div>
                             <!-- [routerLink]="'/create-profile'" -->
-                            <button type="submit" class="btn btn-primary btn-lg" [disabled]="!signUpUserForm.valid">Sign Up</button>
+                            <button type="submit" class="btn btn-primary btn-lg" [disabled]="!signUpHirerForm.valid">Sign Up</button>
                         </form>
                     </div>
                 </div>

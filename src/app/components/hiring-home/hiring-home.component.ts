@@ -18,6 +18,6 @@ export class HiringHomeComponent implements OnInit {
   }
   signUp(){
     console.log("signing up")
-    this.router.navigateByUrl('/sign-up')
+    this.router.navigateByUrl('/hirer-signup')
   }
 }

@@ -25,6 +25,10 @@ import { CompanyPortfolioComponent } from './components/company-portfolio/compan
 import { HiringHeaderComponent } from './components/hiring-header/hiring-header.component';
 import { HomeComponent } from './components/home/home.component';
 import { AngularFireModule } from '@angular/fire';
+import { HirerSignUpComponent } from './components/hirer-sign-up/hirer-sign-up.component';
+import { ManageJobsComponent } from './components/manage-jobs/manage-jobs.component';
+import { DateAgoPipe } from './pipes/date-ago.pipe';
+import { EditProfileComponent } from './components/edit-profile/edit-profile.component';
 
 
 
@@ -50,7 +54,11 @@ import { AngularFireModule } from '@angular/fire';
     CreateCompanyProfleComponent,
     CompanyPortfolioComponent,
     HiringHeaderComponent,
-    HomeComponent
+    HomeComponent,
+    HirerSignUpComponent,
+    ManageJobsComponent,
+    DateAgoPipe,
+    EditProfileComponent
   ],
   imports: [
     BrowserModule,
