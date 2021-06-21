@@ -29,6 +29,10 @@ import { HirerSignUpComponent } from './components/hirer-sign-up/hirer-sign-up.c
 import { ManageJobsComponent } from './components/manage-jobs/manage-jobs.component';
 import { DateAgoPipe } from './pipes/date-ago.pipe';
 import { EditProfileComponent } from './components/edit-profile/edit-profile.component';
+import { ApplyJobComponent } from './components/apply-job/apply-job.component';
+import { JobDetailsUserComponent } from './components/job-details-user/job-details-user.component';
+import { JobDetailsCompanyComponent } from './components/job-details-company/job-details-company.component';
+import { EditCompanyProfileComponent } from './components/edit-company-profile/edit-company-profile.component';
 
 
 
@@ -58,7 +62,11 @@ import { EditProfileComponent } from './components/edit-profile/edit-profile.com
     HirerSignUpComponent,
     ManageJobsComponent,
     DateAgoPipe,
-    EditProfileComponent
+    EditProfileComponent,
+    ApplyJobComponent,
+    JobDetailsUserComponent,
+    JobDetailsCompanyComponent,
+    EditCompanyProfileComponent
   ],
   imports: [
     BrowserModule,

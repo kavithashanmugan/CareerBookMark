@@ -50,13 +50,21 @@ export class ApiService {
   }
 
   getProfile(userId){
-    let params = new HttpParams();
+    
     
     return this.http.get('http://localhost:4000/api/getProfile/'+ userId)
     
   }
+  getCompanyProfile(hirerId){
+  
+    
+    return this.http.get('http://localhost:4000/api/getCompanyProfile/'+ hirerId)
+    
+  }
+
+
   getAllProfiles(){
-    let params = new HttpParams();
+    
     
     return this.http.get('http://localhost:4000/api/getAllProfiles')
     

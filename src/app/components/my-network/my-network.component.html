@@ -1,30 +1,36 @@
 <app-app-header></app-app-header>
 
+<h1>People you may know</h1>
+<hr>
+<section>
+    <div class="network">
+        <div class="row">
+            <div *ngFor="let profile of allProfiles;">
+                <div class="col-sm-3">
 
+                    <div class="card">
 
-<div class="network">
-    <div class="row">
-        <div *ngFor="let profile of allProfiles;">
-            <div class="col-sm-3">
-
-                <div class="card">
-
-                    <div class="card-body">
-                        <div class="container">
-                            <h2 class="card-title" id="fullname">{{profile.fullName}}</h2>
-                            <h3 class="card-text" id="jobTitle">{{profile.jobTitle}}</h3>
-                            <p class="card-text">{{profile.emailId}}
-                            </p>
-                            <p class="card-text">{{profile.location}}
-                            </p>
+                        <div class="card-body">
+                            <div class="container">
+                                <h2 class="card-title" id="fullname">{{profile.fullName}}</h2>
+                                <h3 class="card-text" id="jobTitle">{{profile.jobTitle}}</h3>
+                                <p class="card-text">{{profile.emailId}}
+                                </p>
+                                <p class="card-text">{{profile.location}}
+                                </p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="card-footer">
-                        <button class="btn btn-primary">Connect</button>
-                    </div>
+                        <div class="card-footer">
+                            <button class="btn btn-primary">Connect</button>
+                        </div>
 
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
+</section>
+<section>
+    <h1>My Network</h1>
+    <hr>
+</section>

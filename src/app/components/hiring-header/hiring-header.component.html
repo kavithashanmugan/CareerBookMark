@@ -11,7 +11,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a [routerLink]="'/manage-jobs'" class="nav-link" [routerLinkActive]="['active']" href="#">Manage Jobs</a>
+                <a [routerLink]="'/manage-jobs/1'" class="nav-link" [routerLinkActive]="['active']" href="#">Manage Jobs</a>
             </li>
             <li class="nav-item">
                 <a [routerLink]="'/profiles'" class="nav-link" href="#" [routerLinkActive]="['active']">Profiles</a>
@@ -23,7 +23,7 @@
             <!-- <li class="nav-item ">
               <a class="nav-link " href="# ">Hire Now</a>
           </li> -->
-            <li class="nav-item " *ngIf=!userLogin>
+            <li class="nav-item " *ngIf=!hirerLogin>
                 <div class="nav-item dropdown">
                     <button id="login" data-toggle="dropdown" class="nav-link dropdown-toggle mr-4">Sign In</button>
 
@@ -49,7 +49,7 @@
                 <!-- <a class="nav-link " href="# ">Login</a> -->
             </li>
 
-            <li class="nav-item" *ngIf=userLogin>
+            <li class="nav-item" *ngIf=hirerLogin>
                 <div class="nav-item dropdown">
                     <a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle mr-4"><i class='far fa-user-circle'></i></a>
 

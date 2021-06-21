@@ -18,9 +18,9 @@
                 </div>
                 <div class="col-md-3 col-sm-3">
                     <select class="form-control" formControlName="jobType" placeholder="Location">
-                    <option hidden [value]="" selected>Job Type</option>
-                    <option *ngFor="let type of jobType ">{{type}}</option>
-                </select>
+                        <option hidden [value]="" selected>Job Type</option>
+                        <option *ngFor="let type of jobType ">{{type}}</option>
+                    </select>
                 </div>
 
                 <div class="col-md-2 col-sm-2">
@@ -58,7 +58,7 @@
 </section>
 <div>
     <section>
-        <div class="container">
+        <div class="container allJobs">
             <h3>All Jobs</h3>
             <hr>
             <div class="row">
@@ -70,20 +70,20 @@
                                 <div class="col-sm-6"> <img class="img-company" src="../../../assets/images/companylogo.png" alt="Card image cap"></div>
                                 <button class="save-job"><i class="fas fa-bookmark"></i>
 
-                            </button>
+                                </button>
 
                             </h5>
                         </div>
 
 
-                        <!-- <img src="https://mdbootstrap.com/img/new/standard/nature/184.jpg" class="card-img-top"> -->
+
                         <div class="card-body d-flex flex-column">
-                            <h2 class="card-title">
+                            <h3 class="card-title">
                                 {{job.jobTitle}}
-                            </h2>
-                            <h3 class="card-text">
-                                {{job.Company}}
                             </h3>
+                            <h5 class="card-text">
+                                {{job.Company}}
+                            </h5>
                             <p class="card-text">
                                 {{job.jobLocation}}
                             </p>
@@ -108,7 +108,7 @@
             <h3>Search Results</h3>
             <hr>
             <div class="row">
-                <div class="col-md-4" *ngFor="let job of githubJobs;">
+                <div class="col-md-4" *ngFor="let job of searchResultJobs;">
                     <div class="card p-3 mb-2">
                         <!-- <img src="https://mdbootstrap.com/img/new/standard/nature/184.jpg " class="card-img-top "> -->
                         <div class="card-body mr-auto">

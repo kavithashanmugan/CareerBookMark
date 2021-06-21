@@ -20,6 +20,7 @@ import { EditProfileComponent } from './components/edit-profile/edit-profile.com
 const routes: Routes = [{path:'create-profile/:userId',component:CreateProfileComponent},
 {path:'jobs',component:JobsComponent},
 {path:'portfolio/:userId',component:PortfolioComponent},
+{path:'portfolio',component:PortfolioComponent},
 {path:'sign-up',component:SignUpComponent},
 {path:'home',component:HomeComponent},
 {path:'network',component:MyNetworkComponent},
@@ -29,8 +30,8 @@ const routes: Routes = [{path:'create-profile/:userId',component:CreateProfileCo
 {path:'edit-profile/:userId',component:EditProfileComponent},
 {path: '',   redirectTo: '/home', pathMatch: 'full' },
 {path:'manage-jobs/:userId',component:ManageJobsComponent},
-{path:'create-company-profile/:userId',component:CreateCompanyProfleComponent},
-{path:'company-portfolio/:userId',component:CompanyPortfolioComponent},
+{path:'create-company-profile/:hirerId',component:CreateCompanyProfleComponent},
+{path:'company-portfolio/:hirerId',component:CompanyPortfolioComponent},
 {path:'post-job',component:PostJobComponent}
 ];
 

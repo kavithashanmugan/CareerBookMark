@@ -1,4 +1,21 @@
 <app-app-header></app-app-header>
+<div *ngIf="!portfolioFlag">
+    <div class="centerDiv">
+
+
+        <div class="desc">
+            <h1>Get Noticed by Recruiters and Companies
+            </h1>
+            <h1>
+                <a [routerLink]="['home']">SIGNUP </a>TO CAREER BOOK MARK
+            </h1>
+            <!-- <a [routerLink]="['home']">CAREER BOOK MARK</a> to create Your Portfolio -->
+
+
+
+        </div>
+    </div>
+</div>
 <div *ngIf=portfolioFlag>
     <div class="container-fluid portfolio-page">
         <div class="row">
@@ -108,20 +125,6 @@
                         Card footer
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
-    <div *ngIf="!portfolioFlag">
-        <div class="centerDiv">
-
-
-            <div class="desc">
-                <h1>Sign Up to
-                    <a [routerLink]="['home']">CAREER BOOK MARK</a> to create Your Portfolio</h1>
-                <h1>Get noticed by recruiters and companies</h1>
-
-
-
             </div>
         </div>
     </div>

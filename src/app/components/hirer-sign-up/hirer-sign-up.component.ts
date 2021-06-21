@@ -11,8 +11,8 @@ import { ApiService } from "../../shared/api.service";
   styleUrls: ['./hirer-sign-up.component.css']
 })
 export class HirerSignUpComponent implements OnInit {
-  isLoggedIn: boolean = false;
-  userId:any;
+  isHirerLoggedIn: boolean = false;
+  hirerId:any;
   // signUpHirerForm = new FormGroup({
   //   name:new FormControl('',Validators.required),
   //   email:new FormControl('',Validators.required),
@@ -45,19 +45,21 @@ export class HirerSignUpComponent implements OnInit {
     await this.firebase.signUp(this.signUpHirerForm.get('emailId').value, this.signUpHirerForm.get('password').value)
       .then((res) => {
         console.log("resssss", res)
-        this.isLoggedIn = true
-        localStorage.setItem('user', JSON.stringify(res.user))
-        localStorage.setItem('isLoggedIn', 'true')
-        this.userId = res.user.uid;
-        console.log("userId is",this.userId)
-        let userIdObj = { "userId":res.user.uid}
-        let formData:any = Object.assign({},userIdObj)
+        this.isHirerLoggedIn = true
+        localStorage.setItem('hirer', JSON.stringify(res.user))
+        localStorage.setItem('isHirerLoggedIn', 'true')
+        this.hirerId = res.user.uid;
+        console.log("hirerId is",this.hirerId)
+        let hirerIdObj = { "hirerId":res.user.uid}
+        let formData:any = Object.assign({},hirerIdObj)
         this.api.signUpCompanyFireBase(formData)
           .subscribe((res) => {
             if (res["status"] == true) {
-              console.log("user signup:",this.userId)
-              this.firebase.isLoggedIn = true;
-              this.router.navigate(['/create-company-profile',this.userId]);
+              console.log("user signup:",this.hirerId)
+              this.firebase.isHirerLoggedIn = true;
+              localStorage.setItem('hirerId', this.hirerId)
+              console.log("helloooo",localStorage.getItem('hirerId'))
+              this.router.navigate(['/create-company-profile',localStorage.getItem('hirerId')]);
             }
             else{
               alert("error in signing up")

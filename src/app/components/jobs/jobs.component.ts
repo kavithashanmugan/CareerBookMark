@@ -10,6 +10,7 @@ import { ApiService } from "../../shared/api.service";
 })
 export class JobsComponent implements OnInit {
   searchResults:boolean=false;
+  searchResultJobs:any=[];
   jobType:any
   allJobs:any 
   githubJobs:any
@@ -53,13 +54,14 @@ async getGithubJobs(){
   // })
 }
   searchJobs(){
+    console.log("searching for jobs...")
     console.log(this.jobSearchForm)
     this.api.searchJobs(this.jobSearchForm)
         .subscribe((res)=>{
           if(res["status"] == true){
 
             this.searchResults = true;
-this.jobSearchResult= res["result"];
+this.searchResultJobs= res["result"];
          // console.log("user portfolio created successfully:")
           //this.router.navigate(['/portfolio',this.userId]);
           }

@@ -1,5 +1,105 @@
-<div class="bg">
-    <app-hiring-header>
-    </app-hiring-header>
+<app-hiring-header></app-hiring-header>
 
-</div>
+<div>
+    <div class="container-fluid portfolio-page">
+        <div class="row">
+            <div class="col-md-9 portfolio">
+                <div class="jumbotron clearfix">
+                    <button type="button" class="btn btn-secondary float-right" (click)="updateCompanyProfile()"><i class='fas fa-pencil-alt' style='font-size:15px'></i></button>
+
+                    <h2 id="name">
+                        {{companyPortfolio.companyName}}
+                        <!-- <input *ngIf="editProfile" [(ngModel)]="portfolio.fullName" type="text" class="form-control" /> -->
+                    </h2>
+                    <p id="title" class="clearfix">
+                        {{companyPortfolio.companyType}}
+
+                        <a class="float-right" href="http://www.google.com">{{companyPortfolio.companyWebsite}}</a>
+                    </p>
+                    <p id="location">
+                        {{companyPortfolio.location}}
+                    </p>
+                    <hr>
+                    <p>
+                        {{companyPortfolio.Industry}} </p>
+                </div>
+
+                <div class="jumbotron clearfix">
+                    <!-- <button type="button" class="btn btn-secondary float-right"><i class='fas fa-pencil-alt' style='font-size:15px'></i></button> -->
+                    <h2>
+                        Experience
+                    </h2>
+                    <hr>
+                    <p>
+                        {{companyPortfolio.companyDetails}} </p>
+
+                </div>
+                <div class="jumbotron clearfix">
+                    <!-- <button type="button" class="btn btn-secondary float-right" (click)="updateEducation()"><i class='fas fa-pencil-alt' style='font-size:15px'></i></button> -->
+                    <h2>
+                        Education
+                    </h2>
+                    <hr>
+                    <p>
+                        {{companyPortfolio.employees}} </p>
+
+                </div>
+
+            </div>
+            <div class="col-md-2 ml-2">
+                <h1 style="text-align:center">Jobs for You</h1>
+                <div class="card">
+                    <h5 class="card-header">
+                        Card title
+                    </h5>
+                    <div class="card-body">
+                        <p class="card-text">
+                            Card content
+                        </p>
+                    </div>
+                    <div class="card-footer">
+                        Card footer
+                    </div>
+                </div>
+                <div class="card">
+                    <h5 class="card-header">
+                        Card title
+                    </h5>
+                    <div class="card-body">
+                        <p class="card-text">
+                            Card content
+                        </p>
+                    </div>
+                    <div class="card-footer">
+                        Card footer
+                    </div>
+                </div>
+                <div class="card">
+                    <h5 class="card-header">
+                        Card title
+                    </h5>
+                    <div class="card-body">
+                        <p class="card-text">
+                            Card content
+                        </p>
+                    </div>
+                    <div class="card-footer">
+                        Card footer
+                    </div>
+                </div>
+                <div class="card">
+                    <h5 class="card-header">
+                        Card title
+                    </h5>
+                    <div class="card-body">
+                        <p class="card-text">
+                            Card content
+                        </p>
+                    </div>
+                    <div class="card-footer">
+                        Card footer
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

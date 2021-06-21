@@ -62,6 +62,10 @@
     width: 100px;
 }
 
+.allJobs {
+    margin-bottom: 5%
+}
+
 
 /* .card-title .card-text {
     justify-content: center;
@@ -159,7 +163,7 @@ div {
 
 .job-card-body {
     padding: 5px;
-    min-height: 350px;
+    height: 300px;
 }
 
 .fa-bookmark {

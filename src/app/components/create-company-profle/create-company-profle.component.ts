@@ -12,16 +12,17 @@ import { ApiService } from "../../shared/api.service";
 })
 export class CreateCompanyProfleComponent implements OnInit {
   public Editor = ClassicEditor;
-  userId:any;
+  hirerId:any;
   companyProfileForm = new FormGroup({
     
-    emailId:new FormControl('',Validators.required),
+    
     companyName:new FormControl('',Validators.required),
     companyType:new FormControl('',Validators.required),
     companyWebsite:new FormControl('',Validators.required),
     Industry:new FormControl('',Validators.required),
     location:new FormControl('',Validators.required),
-    companyDetails:new FormControl('',Validators.required)
+    companyDetails:new FormControl('',Validators.required),
+    employees:new FormControl('',Validators.required)
     
    });
 
@@ -29,17 +30,17 @@ export class CreateCompanyProfleComponent implements OnInit {
   constructor(private formBuilder: FormBuilder,private router: Router,public api: ApiService,private _Activatedroute:ActivatedRoute) { }
 
   async ngOnInit() {
-    this.userId=this._Activatedroute.snapshot.paramMap.get("userId");
-console.log("userid",this.userId)
+    this.hirerId=this._Activatedroute.snapshot.paramMap.get("hirerId");
+console.log("hirerid",this.hirerId)
     this.companyProfileForm = this.formBuilder.group({
-      userId:this.userId,  
-      emailId:[''],
+      userId:this.hirerId,
       companyName: [''],
       companyType:[''],
       companyWebsite:[''],
       Industry:[''],
       location:[''],
-      companyDetails:['']
+      companyDetails:[''],
+      employees:['']
   }, {
       //validator: MustMatch('password', 'confirmPassword')
   });
@@ -53,7 +54,7 @@ console.log("userid",this.userId)
         .subscribe((res)=>{
           if(res["status"] == true){
           console.log("company portfolio created successfully:")
-          this.router.navigate(['/company-portfolio',this.userId]);
+          this.router.navigate(['/company-portfolio',this.hirerId]);
           }
         })
 }

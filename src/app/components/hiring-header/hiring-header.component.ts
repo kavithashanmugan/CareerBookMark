@@ -9,10 +9,10 @@ import { Router, ActivatedRoute, ParamMap } from '@angular/router';
   styleUrls: ['./hiring-header.component.css']
 })
 export class HiringHeaderComponent implements OnInit {
-  userLogin:boolean;
+  hirerLogin:boolean;
   email:any;
   closeResult: string;
-  userId:any;
+  hirerId:any;
   signInUserForm = this.formBuilder.group({
     emailId:[''],
     password:['']
@@ -22,22 +22,26 @@ export class HiringHeaderComponent implements OnInit {
 
   ngOnInit(){
     console.log("hey",this.firebase.isLoggedIn)
-    if(this.firebase.isLoggedIn == true){
-      this.userLogin = true;
-      console.log("userLogin",this.userLogin)
-      this.email = ((JSON.parse(localStorage.getItem('user'))).email);
+    if(this.firebase.isHirerLoggedIn == true){
+      this.hirerLogin = true;
+      console.log("hirerLogin",this.hirerLogin)
+      this.email = ((JSON.parse(localStorage.getItem('hirer'))).email);
+      this.hirerId = localStorage.getItem('hirerId');
     }
   }
   async login(){
-    await this.firebase.signIn(this.signInUserForm.get('emailId').value,this.signInUserForm.get('password').value)
-    let data = (JSON.parse(localStorage.getItem('user')));
+    await this.firebase.hirersignIn(this.signInUserForm.get('emailId').value,this.signInUserForm.get('password').value)
+    let data = (JSON.parse(localStorage.getItem('hirer')));
     console.log("data...",data["uid"])
-    this.userId = data["uid"];
-    this.router.navigate(['/company-portfolio',this.userId]);
+    this.hirerId = data["uid"];
+    this.router.navigate(['/company-portfolio',this.hirerId]);
     }
     async logout(){
       await this.firebase.logout();
-      this.userLogin = false;
+      this.hirerLogin = false;
+      localStorage.removeItem('hirerId')
+      this.router.navigateByUrl('/home');
+      localStorage.removeItem('hirer');
    }
 
 }

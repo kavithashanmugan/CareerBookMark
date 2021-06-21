@@ -51,7 +51,7 @@ export class AppHeaderComponent implements OnInit {
   async login(){
   await this.firebase.signIn(this.signInUserForm.get('emailId').value,this.signInUserForm.get('password').value)
   let data = (JSON.parse(localStorage.getItem('user')));
-  console.log("data...",)
+  console.log("data...",data)
   localStorage.setItem('userId', data["uid"]);
   this.userId = localStorage.getItem('userId');
   this.router.navigate(['/portfolio',localStorage.getItem('userId')]);
