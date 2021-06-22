@@ -1,1 +1,23 @@
-<p>manage-jobs works!</p>
+<app-hiring-header></app-hiring-header>
+<p>
+    manage-jobs works!</p>
+<div class="container-fluid">
+
+    <div class="search-box">
+        <div class="row">
+            <form [formGroup]=" postJobForm">
+                <div class="searchform">
+                    <div class="form-group col-md-10 col-sm-10">
+                        <input class="text form-control" id="searchStr" placeholder="Search Posted Jobs" formControlName="keywords" class="form-control">
+                    </div>
+                    <div class=" col-md-2 col-sm-2 ">
+                        <button type="submit " class="btn theme-btn ">Search Jobs</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="manage-jobs">
+        <h1>Manage Jobs</h1>
+    </div>
+</div>
