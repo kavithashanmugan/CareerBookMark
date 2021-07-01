@@ -1,0 +1,32 @@
+.card {
+    width: 150px;
+    height: 150px;
+    padding: 5px;
+    margin: 5px;
+}
+
+card-text {
+    word-wrap: break-word;
+}
+
+.card {
+    margin-bottom: 15px;
+    min-height: 250px;
+    width: 250px;
+    border-radius: 10px;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, .08), 0 0 6px rgba(0, 0, 0, .05);
+    background-color: rgb(247, 247, 253);
+}
+
+.network {
+    margin-left: 15px;
+}
+
+#jobTitle {
+    color: #1C66A3;
+    font-size: 14px;
+}
+
+#fullName {
+    font-size: 18px;
+}

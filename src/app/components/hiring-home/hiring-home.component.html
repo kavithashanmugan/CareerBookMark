@@ -5,8 +5,8 @@
         <h1>for your Organisation</h1>
 
         <p>BookMark the candidates</p>
-        <div>
-            <button class="signUp" (click)="signUp()">Sign Up</button>
+        <div *ngIf="!isSignedIn">
+            <button class=" signUp " (click)="signUp() ">Sign Up</button>
         </div>
     </div>
 

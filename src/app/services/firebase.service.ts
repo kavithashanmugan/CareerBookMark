@@ -10,14 +10,20 @@ import { mergeMap } from 'rxjs/operators';
 })
 export class FirebaseService {
   isLoggedIn = false;
+  isActive;
   isHirerLoggedIn=false;
   apiURL = 'http://localhost:3000';
   constructor(public firebaseAuth: AngularFireAuth,private http: HttpClient) { }
   async signIn(email:string,password:string){
     await this.firebaseAuth.signInWithEmailAndPassword(email,password)
     .then(res=>{
-      this.isLoggedIn = true
+      this.isLoggedIn = true;
+    
       localStorage.setItem('user',JSON.stringify(res.user))
+      sessionStorage.setItem('user',JSON.stringify(res.user))
+    })
+    .catch(err=>{
+      alert(err)
     })
   }
   async hirersignIn(email:string,password:string){
@@ -25,6 +31,7 @@ export class FirebaseService {
     .then(res=>{
       this.isHirerLoggedIn = true
       localStorage.setItem('hirer',JSON.stringify(res.user))
+      sessionStorage.setItem('hirer',JSON.stringify(res.user))
     })
   }
 
@@ -37,6 +44,7 @@ export class FirebaseService {
   logout(){
     this.firebaseAuth.signOut();
     this.isLoggedIn = false;
+    this.isActive = false;
     localStorage.removeItem('user')
   }
 }

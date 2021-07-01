@@ -12,7 +12,7 @@ isSignedIn = false;
   constructor(public firebase : FirebaseService,private router: Router) { }
   
   ngOnInit(){
-    if(this.firebase.isLoggedIn == true){
+    if(localStorage.getItem('user')!=null){
     this.isSignedIn = true;
     }
     else

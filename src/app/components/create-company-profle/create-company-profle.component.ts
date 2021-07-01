@@ -33,7 +33,7 @@ export class CreateCompanyProfleComponent implements OnInit {
     this.hirerId=this._Activatedroute.snapshot.paramMap.get("hirerId");
 console.log("hirerid",this.hirerId)
     this.companyProfileForm = this.formBuilder.group({
-      userId:this.hirerId,
+      hirerId:this.hirerId,
       companyName: [''],
       companyType:[''],
       companyWebsite:[''],

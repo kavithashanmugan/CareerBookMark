@@ -1,4 +1,5 @@
-<app-app-header></app-app-header>
+<app-app-header>
+</app-app-header>
 <div *ngIf="!portfolioFlag">
     <div class="centerDiv">
 
@@ -17,63 +18,66 @@
     </div>
 </div>
 <div *ngIf=portfolioFlag>
-    <div class="container-fluid portfolio-page">
+    <div class="container">
         <div class="row">
-            <div class="col-md-9 portfolio">
-                <div class="jumbotron clearfix">
-                    <button type="button" class="btn btn-secondary float-right" (click)="updateProfile()"><i class='fas fa-pencil-alt' style='font-size:15px'></i></button>
+            <div class="col-md-8 portfolio">
+                <div class="clearfix box">
 
-                    <h2 id="name">
+
+                    <h3 id="name">
                         {{portfolio.fullName}}
+                        <a class="btn btn-secondary float-right" (click)="updateProfile()"><i class='fas fa-pencil-alt' style='font-size:15px'></i></a>
                         <!-- <input *ngIf="editProfile" [(ngModel)]="portfolio.fullName" type="text" class="form-control" /> -->
-                    </h2>
+                    </h3>
                     <p id="title" class="clearfix">
                         {{portfolio.jobTitle}}
+                        <!-- <a class="btn btn-secondary float-right" (click)="updateProfile()"><i class='fas fa-pencil-alt' style='font-size:15px'></i></a> -->
 
-                        <a class="float-right" href="http://www.google.com">{{portfolio.website}}</a>
                     </p>
+                    <p><a href="http://www.google.com">{{portfolio.website}}</a></p>
                     <p id="location">
                         {{portfolio.location}}
                     </p>
                     <hr>
-                    <p>
+                    <p id="summary">
                         {{portfolio.summary}} </p>
+
                 </div>
 
-                <div class="jumbotron clearfix">
+                <div class="clearfix box">
                     <!-- <button type="button" class="btn btn-secondary float-right"><i class='fas fa-pencil-alt' style='font-size:15px'></i></button> -->
                     <h2>
                         Experience
                     </h2>
                     <hr>
-                    <p>
+                    <p id="experience">
                         {{portfolio.experience}} </p>
 
                 </div>
-                <div class="jumbotron clearfix">
+                <div class="clearfix box">
                     <!-- <button type="button" class="btn btn-secondary float-right" (click)="updateEducation()"><i class='fas fa-pencil-alt' style='font-size:15px'></i></button> -->
                     <h2>
                         Education
                     </h2>
                     <hr>
-                    <p>
+                    <p id="education">
                         {{portfolio.education}} </p>
 
                 </div>
-                <div class="jumbotron clearfix">
+                <div class="clearfix box">
                     <!-- <button type="button" class="btn btn-secondary float-right" (click)="updateSkills()"><i class='fas fa-pencil-alt' style='font-size:15px'></i></button> -->
                     <h2>
                         Skills
                     </h2>
                     <hr>
-                    <p>
+                    <p id="skills">
                         {{portfolio.skills}} </p>
 
                 </div>
             </div>
             <div class="col-md-2 ml-2">
                 <h1 style="text-align:center">Jobs for You</h1>
-                <div class="card">
+                <!-- <div class="card">
                     <h5 class="card-header">
                         Card title
                     </h5>
@@ -124,7 +128,7 @@
                     <div class="card-footer">
                         Card footer
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
     </div>

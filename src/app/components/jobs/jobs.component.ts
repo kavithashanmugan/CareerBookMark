@@ -1,6 +1,6 @@
 import { AdminComponent } from './../admin/admin.component';
 import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+import { Router, NavigationExtras,ActivatedRoute, ParamMap } from '@angular/router';
 import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 import { ApiService } from "../../shared/api.service";
 @Component({
@@ -12,13 +12,15 @@ export class JobsComponent implements OnInit {
   searchResults:boolean=false;
   searchResultJobs:any=[];
   jobType:any
+  jobId:any;
   allJobs:any 
   githubJobs:any
   jobSearchResult:any
   now = new Date();
+  userFlag:any=false;
 
   
-  constructor(private fb:FormBuilder,public api: ApiService,private router: Router) {
+  constructor(private fb:FormBuilder,public api: ApiService,private router: Router,private route:ActivatedRoute) {
    
    }
    jobSearchForm = this.fb.group({
@@ -31,7 +33,13 @@ export class JobsComponent implements OnInit {
     this.jobType=['Full Time','Part Time','Contract'];
     this.getAllJobs();
     this.now;
-    console.log("thisss",this.now)
+    if(localStorage.getItem('userId')==null){
+this.userFlag=false;
+    }
+    else {
+      this.userFlag = true;
+    }
+    
     
   }
 
@@ -45,13 +53,7 @@ export class JobsComponent implements OnInit {
   }
 async getGithubJobs(){
   console.log("hitting jobs")
-  // this.githubJobs = await axios.get('https://jobs.github.com/positions.json?search=node')
-  // console.log("github jobs",this.githubJobs);
-  // this.api.getGithubJobs()
-  // .subscribe((res)=>{
-  //   this.githubJobs = res
-  //   this.searchResults = true
-  // })
+ 
 }
   searchJobs(){
     console.log("searching for jobs...")
@@ -62,24 +64,20 @@ async getGithubJobs(){
 
             this.searchResults = true;
 this.searchResultJobs= res["result"];
-         // console.log("user portfolio created successfully:")
-          //this.router.navigate(['/portfolio',this.userId]);
           }
         })
   }
-  applyJob(){
-    console.log("applying for job")
-    alert("Applied for job successfully")
+  applyJob(job){
+   
+   // alert("Applied for job successfully")
+    this.jobId = job.jobId
+    console.log("applying for job",this.jobId)
+    // let navigationExtras: NavigationExtras = {
+    //         state: {
+    //   job: job
+    //         }
+    //       };
+    this.router.navigate(['/job-details-apply',this.jobId]);
   }
 }
-//   searchJobs(){
-// this.searchResults=true;
-// this.allJobs = [{"jobTitle":"Junior Developer","jobPostedOn":"May 02 2021","company":"ABS Solutions"},
-//     {"jobTitle":"Blockchain Developer","jobPostedOn":"May 10 2021","company":"ABS Solutions"},
-//     {"jobTitle":"Application Support","jobPostedOn":"May 22 2021","company":"ABS Solutions"},
-//     {"jobTitle":"Frontend Developer","jobPostedOn":"May 14 2021","company":"ABS Solutions"},
-//     {"jobTitle":"Java Developer","jobPostedOn":"May 18 2021","company":"ABS Solutions"}
-  
-//   ];
-//   }
 

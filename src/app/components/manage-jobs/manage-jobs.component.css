@@ -1,65 +1,117 @@
-.box-body {
-    padding: 25px 30px;
-    border-radius: 4px 4px 4px 4px;
-    -ms-flex: 1 1 auto;
-    flex: 1 1 auto;
-    border: 2px solid #f1f3f4;
-    border-top: 0;
-}
-
-.box {
-    position: relative;
-    border-top: 0;
-    margin-bottom: 40px;
-    width: 100%;
-    background: #fff;
-    border-radius: 4px;
-    padding: 0px;
-    -webkit-transition: .5s;
-    transition: .5s;
-    display: -ms-utf_flexbox_area;
-    display: flex;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    box-shadow: 0 5px 15px 0 rgb(41 128 185 / 10%);
-    -webkit-box-shadow: 0 5px 15px 0 rgb(41 128 185 / 10%);
-}
-
-.search-box {
-    display: flex;
-    background: #1C66A3;
-    flex-wrap: wrap;
-    flex-direction: column;
-    align-items: center;
-    align-content: center;
-    height: 150px;
-}
-
-.theme-btn {
-    background: #02A59C;
-    color: white;
-    height: 35px;
-    width: 80px;
-}
-
-.form-control {
-    height: 35px;
-    width: 500px;
-    padding-top: 10px;
-    border: 2px solid #dde6ef;
-    margin-bottom: 20px;
-    box-shadow: none;
-    background: #fbfdff;
-    font-size: 14px;
-    color: #6b7c8a;
-    padding: 6px 18px;
-    font-weight: 500;
-}
-
-.searchform {
-    margin-top: 10%;
-}
-
-.manage-jobs {
-    margin-top: 5%;
-}
+            .box-body {
+                padding: 25px 30px;
+                border-radius: 4px 4px 4px 4px;
+                -ms-flex: 1 1 auto;
+                flex: 1 1 auto;
+                border: 2px solid #f1f3f4;
+                border-top: 0;
+            }
+            
+            .box {
+                position: relative;
+                border-top: 0;
+                margin-bottom: 40px;
+                width: 100%;
+                background: #fff;
+                border-radius: 4px;
+                padding: 0px;
+                -webkit-transition: .5s;
+                transition: .5s;
+                display: -ms-utf_flexbox_area;
+                display: flex;
+                -ms-flex-direction: column;
+                flex-direction: column;
+                box-shadow: 0 5px 15px 0 rgb(41 128 185 / 10%);
+                -webkit-box-shadow: 0 5px 15px 0 rgb(41 128 185 / 10%);
+            }
+            
+            .search-box {
+                display: flex;
+                background: #1C66A3;
+                flex-wrap: wrap;
+                flex-direction: column;
+                align-items: center;
+                align-content: center;
+                height: 150px;
+            }
+            
+            .theme-btn {
+                background: #02A59C;
+                color: white;
+                height: 35px;
+                width: 120px;
+            }
+            
+            .container-fluid {
+                padding-left: 5%;
+                padding-right: 5%;
+            }
+            
+            .form-control {
+                height: 35px;
+                width: 500px;
+                padding-top: 10px;
+                border: 2px solid #dde6ef;
+                margin-bottom: 20px;
+                box-shadow: none;
+                background: #fbfdff;
+                font-size: 14px;
+                color: #6b7c8a;
+                padding: 6px 18px;
+                font-weight: 500;
+            }
+            
+            .searchform {
+                margin-top: 10%;
+            }
+            
+            .manage-jobs {
+                margin-top: 5%;
+            }
+            
+            .manageJobsBox {
+                position: relative;
+                border-top: 0;
+                margin-bottom: 40px;
+                width: 100%;
+                background: #fff;
+                border-radius: 4px;
+                padding: 0px;
+                -webkit-transition: .5s;
+                transition: .5s;
+                display: -ms-utf_flexbox_area;
+                display: flex;
+                -ms-flex-direction: column;
+                flex-direction: column;
+                box-shadow: 0px 3px 6px #00000029;
+                -webkit-box-shadow: 0 5px 15px 0 rgb(41 128 185 / 10%);
+            }
+            
+            .nav-item a {
+                width: 100%;
+            }
+            
+            .nav-item {
+                font-size: 15px;
+            }
+            
+            .nav-item {
+                color: black;
+                background-color: white;
+                text-decoration: none;
+                font-weight: bold;
+            }
+            
+            .nav-item a:active {
+                text-decoration: underline rgb(33, 33, 189);
+                color: rgba(68, 38, 238, 0.5);
+            }
+            
+            tr {
+                background: #F9F9F9 0% 0% no-repeat padding-box;
+                box-shadow: 0px 2px 6px #00000029;
+                border-radius: 4px;
+                opacity: 1;
+                margin: 1%;
+                justify-content: space-around;
+            }

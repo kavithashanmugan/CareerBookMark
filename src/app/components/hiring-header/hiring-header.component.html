@@ -10,13 +10,17 @@
                 <a [routerLink]="'/post-job'" class="nav-link" [routerLinkActive]="['active']">Post Job
                 </a>
             </li>
-            <li class="nav-item">
-                <a [routerLink]="'/manage-jobs/1'" class="nav-link" [routerLinkActive]="['active']" href="#">Manage Jobs</a>
+            <li class="nav-item" *ngIf="hirerId">
+                <a [routerLink]="['/manage-jobs',hirerId]" class="nav-link" [routerLinkActive]="['active']">Manage Jobs</a>
             </li>
             <li class="nav-item">
-                <a [routerLink]="'/profiles'" class="nav-link" href="#" [routerLinkActive]="['active']">Profiles</a>
+                <a [routerLink]="'/all-profiles'" class="nav-link" [routerLinkActive]="['active']">Profiles</a>
 
             </li>
+            <!-- <li class="nav-item">
+                <a [routerLink]="['/manage-profiles-company',hirerId]" class="nav-link" [routerLinkActive]="['active']">Profiles</a>
+
+            </li> -->
 
         </ul>
         <ul class=" navbar-nav  ">
@@ -45,17 +49,22 @@
                         </form>
                     </div>
                 </div>
-                <!-- <button class="signUp" data-toggle="modal" data-target="#signInModal">Sign In</button> -->
-                <!-- <a class="nav-link " href="# ">Login</a> -->
             </li>
 
             <li class="nav-item" *ngIf=hirerLogin>
                 <div class="nav-item dropdown">
-                    <a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle mr-4"><i class='far fa-user-circle'></i></a>
+                    <a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle"><i class='far fa-user-circle'></i></a>
 
-                    <div class="dropdown-menu dropdwn ">
-                        <li>{{email}}</li>
-                        <button style="align-items: center;" (click)="logout()">LogOut</button>
+                    <div class="dropdown-menu px-4 dropdown-menu-right">
+
+                        <a class="dropdown-item">{{email}}</a>
+                        <a class="dropdown-item" [routerLink]="['/company-portfolio',hirerId]">My Profile</a>
+                        <div class="dropdown-divider"></div>
+                        <a href="#" class="dropdown-item" (click)="logout()">Logout</a>
+
+
+
+
                     </div>
                 </div>
 

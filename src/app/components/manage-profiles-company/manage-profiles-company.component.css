@@ -1,0 +1,17 @@
+.box {
+    position: relative;
+    border-top: 0;
+    margin-bottom: 40px;
+    width: 100%;
+    background: #fff;
+    border-radius: 4px;
+    padding: 0px;
+    -webkit-transition: .5s;
+    transition: .5s;
+    display: -ms-utf_flexbox_area;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    box-shadow: 0 5px 15px 0 rgb(41 128 185 / 10%);
+    -webkit-box-shadow: 0 5px 15px 0 rgb(41 128 185 / 10%);
+}

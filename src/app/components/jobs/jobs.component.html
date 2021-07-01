@@ -1,10 +1,20 @@
 <app-app-header></app-app-header>
 
-<h3>Search Jobs</h3>
-<hr>
-<br>
+<!-- <section>
+    <div>
+        <a [routerLink]="'/track-my-jobs'">Track my jobs</a>
+    </div>
+</section> -->
+
 <section>
     <div class="container">
+        <h3 id="search">SEARCH JOBS</h3>
+        <hr>
+        <br>
+        <div *ngIf="userFlag">
+            <div class="mb-5 "><a id="trackjob" [routerLink]="'/track-my-jobs'">Track my jobs</a></div>
+        </div>
+
         <form [formGroup]="jobSearchForm" (ngSubmit)="searchJobs()">
             <!-- <fieldset> -->
 
@@ -38,17 +48,44 @@
                 <h3>Search Results</h3>
                 <hr>
                 <div class="row">
-                    <div class="col-sm-3" *ngFor="let job of allJobs">
-                        <div class="card text-center" style="width: 18rem;">
-                            <!-- <img src="https://mdbootstrap.com/img/new/standard/nature/184.jpg" class="card-img-top"> -->
-                            <div class="card-body">
-                                <h5 class="card-title"> {{job.jobTitle}} </h5>
-                                <div class="card-text">
-                                    Company
-                                </div>
-                                <button type="button" class="btn btn-primary">view</button>
+
+                    <div class="col-sm-3 col-md-3 py-2" *ngFor="let job of searchResultJobs">
+                        <div class="card job-card-body margin:0 auto;">
+                            <div class="row">
+                                <h5 id="job-card-header">
+                                    <div class="col-sm-6"> <img class="img-company" src="../../../assets/images/companylogo.png" alt="Card image cap"></div>
+                                    <button class="save-job"><i class="fas fa-bookmark"></i>
+    
+                                    </button>
+
+                                </h5>
+                            </div>
+
+
+
+                            <div class="card-body d-flex flex-column">
+                                <h3 class="card-title">
+                                    {{job.jobTitle}}
+                                </h3>
+                                <h5 class="card-text">
+                                    {{job.Company}}
+                                </h5>
+                                <p class="card-text">
+                                    {{job.jobLocation}}
+                                </p>
+                                <!-- //job.jobPostedDate -->
+                                <p>Job posted date : {{ job.jobPostedDate | dateAgo}}</p>
+
 
                             </div>
+                            <div *ngIf="userFlag">
+                                <div class="card-footer">
+                                    <div style="text-align: center;">
+                                        <button type="button" class="btn btn-primary btn-apply" style="padding:5px;">Apply</button>
+                                    </div>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
                 </div>
@@ -56,6 +93,7 @@
         </div>
     </div>
 </section>
+
 <div>
     <section>
         <div class="container allJobs">
@@ -92,25 +130,25 @@
 
 
                         </div>
-                        <div class="card-footer">
-                            <div style="text-align: center;">
-                                <button type="button" class="btn btn-primary btn-apply" style="padding:5px;">Apply</button>
+                        <div *ngIf="userFlag">
+                            <div class="card-footer">
+                                <div style="text-align: center;">
+                                    <button type="button" class="btn btn-primary btn-apply" style="padding:5px;" (click)="applyJob(job)">Apply  <input type="hidden" value={{job}}/></button>
+                                </div>
                             </div>
                         </div>
-
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <div *ngIf="searchResults">
+    <!-- <div *ngIf="searchResults">
         <div class="resultBox">
             <h3>Search Results</h3>
             <hr>
             <div class="row">
                 <div class="col-md-4" *ngFor="let job of searchResultJobs;">
                     <div class="card p-3 mb-2">
-                        <!-- <img src="https://mdbootstrap.com/img/new/standard/nature/184.jpg " class="card-img-top "> -->
                         <div class="card-body mr-auto">
                             <h2 class="card-title" style="align-items: center; ">
                                 {{job.title}}
@@ -127,5 +165,5 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 </div>

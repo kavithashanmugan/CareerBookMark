@@ -1,105 +1,53 @@
 <app-hiring-header></app-hiring-header>
 
 <div>
-    <div class="container-fluid portfolio-page">
+    <div class="container portfolio-page">
         <div class="row">
-            <div class="col-md-9 portfolio">
-                <div class="jumbotron clearfix">
-                    <button type="button" class="btn btn-secondary float-right" (click)="updateCompanyProfile()"><i class='fas fa-pencil-alt' style='font-size:15px'></i></button>
+            <div class="col-md-12 portfolio">
+                <div class=" clearfix box card">
+                    <img class="card-img-top  wallpaper-company" src="https://www.ledcor.com/getmedia/fb47f532-7fa4-4333-b0d2-ebcde21c6338/IMG_8911_1.jpg.aspx?width=960&height=600&ext=.jpg&maxsidesize=960" alt="Card image cap">
+
+                    <!-- <button type="button" class="btn btn-secondary float-right" (click)="updateCompanyProfile()"><i class='fas fa-pencil-alt' style='font-size:15px'></i></button> -->
 
                     <h2 id="name">
                         {{companyPortfolio.companyName}}
                         <!-- <input *ngIf="editProfile" [(ngModel)]="portfolio.fullName" type="text" class="form-control" /> -->
                     </h2>
-                    <p id="title" class="clearfix">
+                    <p id="title">
                         {{companyPortfolio.companyType}}
 
-                        <a class="float-right" href="http://www.google.com">{{companyPortfolio.companyWebsite}}</a>
+                        <a class="float-right" target="_blank">{{companyPortfolio.companyWebsite}}</a>
                     </p>
                     <p id="location">
                         {{companyPortfolio.location}}
                     </p>
                     <hr>
-                    <p>
+                    <p id="industry">
                         {{companyPortfolio.Industry}} </p>
                 </div>
 
-                <div class="jumbotron clearfix">
+                <div class="box">
                     <!-- <button type="button" class="btn btn-secondary float-right"><i class='fas fa-pencil-alt' style='font-size:15px'></i></button> -->
                     <h2>
-                        Experience
+                        Company Details
                     </h2>
                     <hr>
-                    <p>
+                    <p id="companydetails">
                         {{companyPortfolio.companyDetails}} </p>
 
                 </div>
-                <div class="jumbotron clearfix">
+                <div class=" clearfix box">
                     <!-- <button type="button" class="btn btn-secondary float-right" (click)="updateEducation()"><i class='fas fa-pencil-alt' style='font-size:15px'></i></button> -->
                     <h2>
-                        Education
+                        Employees
                     </h2>
                     <hr>
-                    <p>
+                    <p id="employees">
                         {{companyPortfolio.employees}} </p>
 
                 </div>
 
             </div>
-            <div class="col-md-2 ml-2">
-                <h1 style="text-align:center">Jobs for You</h1>
-                <div class="card">
-                    <h5 class="card-header">
-                        Card title
-                    </h5>
-                    <div class="card-body">
-                        <p class="card-text">
-                            Card content
-                        </p>
-                    </div>
-                    <div class="card-footer">
-                        Card footer
-                    </div>
-                </div>
-                <div class="card">
-                    <h5 class="card-header">
-                        Card title
-                    </h5>
-                    <div class="card-body">
-                        <p class="card-text">
-                            Card content
-                        </p>
-                    </div>
-                    <div class="card-footer">
-                        Card footer
-                    </div>
-                </div>
-                <div class="card">
-                    <h5 class="card-header">
-                        Card title
-                    </h5>
-                    <div class="card-body">
-                        <p class="card-text">
-                            Card content
-                        </p>
-                    </div>
-                    <div class="card-footer">
-                        Card footer
-                    </div>
-                </div>
-                <div class="card">
-                    <h5 class="card-header">
-                        Card title
-                    </h5>
-                    <div class="card-body">
-                        <p class="card-text">
-                            Card content
-                        </p>
-                    </div>
-                    <div class="card-footer">
-                        Card footer
-                    </div>
-                </div>
-            </div>
+
         </div>
     </div>

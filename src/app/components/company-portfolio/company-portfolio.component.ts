@@ -18,7 +18,7 @@ export class CompanyPortfolioComponent implements OnInit {
   async ngOnInit(){
 
     console.log("page loading...")
-    if(this.firebase.isHirerLoggedIn==true){
+    if(localStorage.getItem('hirer')!=null){
       let data = (JSON.parse(localStorage.getItem('hirer')));
 console.log(localStorage.getItem('hirer'))
       console.log("data",data)

@@ -16,7 +16,12 @@ import { CompanyPortfolioComponent } from './components/company-portfolio/compan
 import { PostJobComponent } from './components/post-job/post-job.component';
 import { ManageJobsComponent } from './components/manage-jobs/manage-jobs.component';
 import { EditProfileComponent } from './components/edit-profile/edit-profile.component';
-
+import { EditCompanyProfileComponent } from './components/edit-company-profile/edit-company-profile.component';
+import { JobDetailsApplyComponent } from './components/job-details-apply/job-details-apply.component';
+import { TrackMyJobsComponent } from './components/track-my-jobs/track-my-jobs.component';
+import { JobDetailsCompanyComponent } from './components/job-details-company/job-details-company.component';
+import { ManageProfilesCompanyComponent } from './components/manage-profiles-company/manage-profiles-company.component';
+import { AllProfilesComponent } from './components/all-profiles/all-profiles.component';
 const routes: Routes = [{path:'create-profile/:userId',component:CreateProfileComponent},
 {path:'jobs',component:JobsComponent},
 {path:'portfolio/:userId',component:PortfolioComponent},
@@ -29,10 +34,17 @@ const routes: Routes = [{path:'create-profile/:userId',component:CreateProfileCo
 {path:'hiring-home',component:HiringHomeComponent},
 {path:'edit-profile/:userId',component:EditProfileComponent},
 {path: '',   redirectTo: '/home', pathMatch: 'full' },
-{path:'manage-jobs/:userId',component:ManageJobsComponent},
+{path:'manage-jobs/:hirerId',component:ManageJobsComponent},
 {path:'create-company-profile/:hirerId',component:CreateCompanyProfleComponent},
 {path:'company-portfolio/:hirerId',component:CompanyPortfolioComponent},
-{path:'post-job',component:PostJobComponent}
+{path:'post-job',component:PostJobComponent},
+{path:'edit-company-profile/:hirerId',component:EditCompanyProfileComponent},
+{path:'job-details-apply/:jobId',component:JobDetailsApplyComponent},
+{path:'job-details-company/:jobId',component:JobDetailsCompanyComponent},
+{path:'track-my-jobs',component:TrackMyJobsComponent},
+{path:'manage-profiles-company/:hirerId',component:ManageProfilesCompanyComponent},
+{path:'all-profiles',component:AllProfilesComponent}
+
 ];
 
 @NgModule({

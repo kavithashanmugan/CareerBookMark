@@ -33,6 +33,10 @@ import { ApplyJobComponent } from './components/apply-job/apply-job.component';
 import { JobDetailsUserComponent } from './components/job-details-user/job-details-user.component';
 import { JobDetailsCompanyComponent } from './components/job-details-company/job-details-company.component';
 import { EditCompanyProfileComponent } from './components/edit-company-profile/edit-company-profile.component';
+import { JobDetailsApplyComponent } from './components/job-details-apply/job-details-apply.component';
+import { TrackMyJobsComponent } from './components/track-my-jobs/track-my-jobs.component';
+import { ManageProfilesCompanyComponent } from './components/manage-profiles-company/manage-profiles-company.component';
+import { AllProfilesComponent } from './components/all-profiles/all-profiles.component';
 
 
 
@@ -66,7 +70,11 @@ import { EditCompanyProfileComponent } from './components/edit-company-profile/e
     ApplyJobComponent,
     JobDetailsUserComponent,
     JobDetailsCompanyComponent,
-    EditCompanyProfileComponent
+    EditCompanyProfileComponent,
+    JobDetailsApplyComponent,
+    TrackMyJobsComponent,
+    ManageProfilesCompanyComponent,
+    AllProfilesComponent
   ],
   imports: [
     BrowserModule,

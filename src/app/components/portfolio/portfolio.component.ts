@@ -21,9 +21,12 @@ export class PortfolioComponent implements OnInit {
   constructor(public api: ApiService,private _Activatedroute:ActivatedRoute,public firebase : FirebaseService,private router: Router) { }
 
   async ngOnInit() {
-console.log("portfolio flag",this.portfolioFlag)
+//console.log("portfolio flag",this.portfolioFlag)
     console.log("page loading...")
-    if(this.firebase.isLoggedIn==true){
+    console.log("hello user",localStorage.getItem('user'))
+    console.log("is logged in firebase",this.firebase.isLoggedIn)
+    if(localStorage.getItem('user')!=null){
+      console.log("is logged in firebase",this.firebase.isLoggedIn)
       let data = (JSON.parse(localStorage.getItem('user')));
 console.log(localStorage.getItem('user'))
       console.log("data",data)
@@ -32,7 +35,7 @@ console.log(localStorage.getItem('user'))
     }
     this.userId=this._Activatedroute.snapshot.paramMap.get("userId");
     console.log("userId",this.userId)
-    if(this.userId!=undefined && this.firebase.isLoggedIn==true){
+    if(this.userId!=undefined ){
       this.getProfileDetails(this.userId); 
       this.portfolioFlag = true
     }

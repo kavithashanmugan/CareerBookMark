@@ -1,0 +1,22 @@
+<app-app-header>
+</app-app-header>
+<div class="container">
+    <h3>TRACK YOUR JOBS</h3>
+    <div class="box">
+        <div class="list-group" *ngFor="let jobs of appliedJobs">
+            <div>
+                <a [routerLink]="['/job-details-apply',jobs.jobId]" class="list-group-item list-group-item-action flex-column align-items-start ">
+                    <div class="d-flex w-100 justify-content-between">
+                        <h5 class="mb-1">{{jobs.jobTitle}}</h5>
+                        <h6>{{jobs.appliedOn|dateAgo}}</h6>
+                    </div>
+                    <p class="mb-1">{{jobs.Company}}</p>
+                    <small>{{jobs.jobLocation}}</small>
+                    <p hidden>{{jobs.jobId}}</p>
+
+                </a>
+            </div>
+
+        </div>
+    </div>
+</div>

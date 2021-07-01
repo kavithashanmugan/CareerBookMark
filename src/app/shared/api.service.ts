@@ -7,7 +7,7 @@ import { retry, catchError } from 'rxjs/operators';
 })
 export class ApiService {
 
-  apiURL = 'http://localhost:4000';
+  apiURL:string = 'https://careerbookmarkbe.herokuapp.com/api/';
   constructor(private http: HttpClient) { 
 
 
@@ -24,41 +24,41 @@ export class ApiService {
     })
   }  
 
-  // HttpClient API get() method => Fetch employees list
   signUpFireBase(User){
-    // let formData:any = Object.assign(User.value)
-   // console.log("user..",formData)
-    return this.http.post('http://localhost:4000/api/signUpFireBase',User)
-    // .pipe(
-    //   retry(1),
-    //   catchError(this.handleError)
-    // )
+    return this.http.post(`${this.apiURL}/signUpFireBase`,User)
+    
   }
   signUpCompanyFireBase(company){
-    return this.http.post('http://localhost:4000/api/signUpCompanyFireBase',company)
+    return this.http.post(`${this.apiURL}/signUpCompanyFireBase`,company)
   }
 
   createProfile(UserDetails){
     let formData:any = Object.assign(UserDetails.value)
     console.log("user details..",formData)
-    return this.http.post('http://localhost:4000/api/createProfile',formData)
+    return this.http.post(`${this.apiURL}/createProfile`,formData)
   }
   createCompanyProfile(CompanyDetails){
     let formData:any = Object.assign(CompanyDetails.value)
     console.log("user details..",formData)
-    return this.http.post('http://localhost:4000/api/createCompanyProfile',formData)
+    return this.http.post(`${this.apiURL}/createCompanyProfile`,formData)
   }
 
   getProfile(userId){
     
     
-    return this.http.get('http://localhost:4000/api/getProfile/'+ userId)
+    return this.http.get(`${this.apiURL}/getProfile/`+ userId)
     
+  }
+  getJobById(jobId){
+    return this.http.get(`${this.apiURL}/getJobById/`+ jobId)
+  }
+  getAppliedJobs(userId){
+    return this.http.get(`${this.apiURL}/getAppliedJobs/`+ userId)
   }
   getCompanyProfile(hirerId){
   
     
-    return this.http.get('http://localhost:4000/api/getCompanyProfile/'+ hirerId)
+    return this.http.get(`${this.apiURL}/getCompanyProfile/`+ hirerId)
     
   }
 
@@ -66,28 +66,58 @@ export class ApiService {
   getAllProfiles(){
     
     
-    return this.http.get('http://localhost:4000/api/getAllProfiles')
+    return this.http.get(`${this.apiURL}/getAllProfiles`)
     
   }
 
   getAllJobs(){
-    return this.http.get('http://localhost:4000/api/getAllJobs')
+    return this.http.get(`${this.apiURL}/getAllJobs`)
   }
   
   postJob(JobDetails){
     let formData:any = Object.assign(JobDetails.value)
     console.log("job details..",formData)
-    return this.http.post('http://localhost:4000/api/postJob',formData)
+    return this.http.post(`${this.apiURL}/postJob`,formData)
   }
   searchJobs(JobSearchForm){
     let formData:any = Object.assign(JobSearchForm.value)
     console.log("job search..",formData)
-    return this.http.post('http://localhost:4000/api/searchJobs',formData)
+    return this.http.post(`${this.apiURL}/searchJobs`,formData)
+  }
+  searchPostedJobs(JobSearchForm){
+    let formData:any = Object.assign(JobSearchForm.value)
+    console.log("job search posted..",formData)
+    return this.http.post(`${this.apiURL}/searchPostedJobs`,formData)
   }
 
   updateProfile(ProfileForm){
     let formData:any = Object.assign(ProfileForm.value)
     console.log("job search..",formData)
-    return this.http.post('http://localhost:4000/api/updateProfile',formData)
+    return this.http.post(`${this.apiURL}/updateProfile`,formData)
   }
+
+  applyJob(requestObj){
+    
+    console.log("hitting apply job in api")
+    return this.http.post(`${this.apiURL}/applyJob`,requestObj)
+  }
+  getJobByHirerId(hirerId){
+    return this.http.post(`${this.apiURL}/getJobByHirerId`,hirerId)
+  }
+
+  getClosedJobsByHirer(hirerId){
+    return this.http.post(`${this.apiURL}/getClosedJobsByHirer`,hirerId)
+  }
+
+  getOpenJobsByHirer(hirerId){
+    console.log("hitting get open jobs by hirer")
+    return this.http.post(`${this.apiURL}/getOpenJobsByHirer`,hirerId)
+  }
+
+closeJob(jobId){
+  
+  return this.http.post(`${this.apiURL}/closeJob`,jobId)
+}
+
+  
 }

@@ -22,7 +22,8 @@ export class HiringHeaderComponent implements OnInit {
 
   ngOnInit(){
     console.log("hey",this.firebase.isLoggedIn)
-    if(this.firebase.isHirerLoggedIn == true){
+
+    if(this.firebase.isHirerLoggedIn == true || localStorage.getItem('hirer')!=null){
       this.hirerLogin = true;
       console.log("hirerLogin",this.hirerLogin)
       this.email = ((JSON.parse(localStorage.getItem('hirer'))).email);
@@ -34,6 +35,7 @@ export class HiringHeaderComponent implements OnInit {
     let data = (JSON.parse(localStorage.getItem('hirer')));
     console.log("data...",data["uid"])
     this.hirerId = data["uid"];
+    localStorage.setItem('hirerId', this.hirerId)
     this.router.navigate(['/company-portfolio',this.hirerId]);
     }
     async logout(){

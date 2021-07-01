@@ -1,73 +1,92 @@
-<app-hiring-header>
-</app-hiring-header>
-<section class="postjobsection">
-    <div class="container">
-        <form [formGroup]=" postJobForm" (ngSubmit)="postJob()" class="c-form">
-
-            <div class="box">
-
-                <div class="box-header">
-                    <h4>Post New Job</h4>
-                </div>
-                <div class="box-body">
-                    <div class="row ">
-                        <div class="form-group col-sm-4 ">
-                            <label for="jobTitle ">Job Title:</label>
-                            <input type="text " id="jobTitle" placeholder="Job Title" formControlName="jobTitle" class="form-control ">
-                        </div>
-                        <div class="form-group col-sm-4 ">
-                            <label for="company">Company:</label>
-                            <input type="text " id="company " placeholder="Company" formControlName="Company" class="form-control ">
-                        </div>
-                        <div class="form-group col-sm-4 ">
-                            <label for="jobLocation ">Job location:</label>
-                            <input type="text " id="jobLocation " placeholder="job location" formControlName="jobLocation" class="form-control ">
-                        </div>
-
-                    </div>
-                    <div class="row ">
-                        <div class="form-group col-sm-4 ">
-                            <label for="emailId ">Job Start Date:</label>
-                            <input type="date" id="jobStartDate " placeholder="Job start date" formControlName="jobStartDate" class="form-control ">
-                        </div>
-                        <div class="form-group col-sm-4 ">
-                            <label for="jobType ">Job Type:</label>
-                            <input type="text " id="jobType " placeholder="Job Type" formControlName="jobType" class="form-control ">
-                        </div>
-
-                        <div class="form-group col-sm-4 ">
-                            <label for="salaryRange ">Salary Range:</label>
-                            <input type="text " id="salaryRange " placeholder="salaryRange" formControlName="salaryRange" class="form-control " />
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="form-group col-sm-12 ">
-                            <label for="companyDesc ">Company Description:</label>
-                            <textarea class="textarea" id="companyDesc " placeholder="Company Description" formControlName="companyDesc" class="form-control "></textarea>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="form-group col-sm-12 ">
-                            <label for="jobTitle ">Job Requirements:</label>
-                            <textarea class="textarea" id="jobRequirements " placeholder="Job Requirements" formControlName="jobRequirements" class="form-control "></textarea>
-                        </div>
-                    </div>
-                    <div class="row ">
-                        <div class="form-group col-sm-12 ">
-                            <label for="summary ">Job Summary:</label>
-                            <textarea name="summary " placeholder="Job Summary" formControlName="jobSummary" class="textarea " class="form-control "></textarea>
-                        </div>
-                    </div>
-
-
-                    <div class="row ">
-                        <div class="col-sm-12 text-center ">
-                            <button class="btn theme-btn full-width">Submit</button>
-                        </div>
+<div *ngIf="!hirerId" class="guestpost">
+    <app-hiring-header>
+    </app-hiring-header>
+    <section>
+        <div>
+            <div class="row">
+                <div class="col-md-5"></div>
+                <div class="col-md-5">
+                    <div class="messageGuest"><span>SignUp to view potential candidates for your organisation </span>
+                        <br> Post your jobs in CareerBookMark
                     </div>
                 </div>
+
             </div>
-        </form>
+        </div>
+    </section>
+</div>
+<div *ngIf="hirerId">
+    <app-hiring-header>
+    </app-hiring-header>
+    <section class="postjobsection">
+        <div class="container">
+            <form [formGroup]=" postJobForm" (ngSubmit)="postJob()" class="c-form">
 
-    </div>
-</section>
+                <div class="box">
+
+                    <div class="box-header">
+                        <h4>Post New Job</h4>
+                    </div>
+                    <div class="box-body">
+                        <div class="row ">
+                            <div class="form-group col-sm-4 ">
+                                <label for="jobTitle ">Job Title:</label>
+                                <input type="text " id="jobTitle" placeholder="Job Title" formControlName="jobTitle" class="form-control ">
+                            </div>
+                            <div class="form-group col-sm-4 ">
+                                <label for="company">Company:</label>
+                                <input type="text " id="company " placeholder="Company" formControlName="Company" class="form-control ">
+                            </div>
+                            <div class="form-group col-sm-4 ">
+                                <label for="jobLocation ">Job location:</label>
+                                <input type="text " id="jobLocation " placeholder="job location" formControlName="jobLocation" class="form-control ">
+                            </div>
+
+                        </div>
+                        <div class="row ">
+                            <div class="form-group col-sm-4 ">
+                                <label for="emailId ">Job Start Date:</label>
+                                <input type="date" id="jobStartDate " placeholder="Job start date" formControlName="jobStartDate" class="form-control ">
+                            </div>
+                            <div class="form-group col-sm-4 ">
+                                <label for="jobType ">Job Type:</label>
+                                <input type="text " id="jobType " placeholder="Job Type" formControlName="jobType" class="form-control ">
+                            </div>
+
+                            <div class="form-group col-sm-4 ">
+                                <label for="salaryRange ">Salary Range:</label>
+                                <input type="text " id="salaryRange " placeholder="salaryRange" formControlName="salaryRange" class="form-control " />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-sm-12 ">
+                                <label for="companyDesc ">Company Description:</label>
+                                <textarea class="textarea" id="companyDesc " placeholder="Company Description" formControlName="companyDesc" class="form-control "></textarea>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-sm-12 ">
+                                <label for="jobTitle ">Job Requirements:</label>
+                                <textarea class="textarea" id="jobRequirements " placeholder="Job Requirements" formControlName="jobRequirements" class="form-control "></textarea>
+                            </div>
+                        </div>
+                        <div class="row ">
+                            <div class="form-group col-sm-12 ">
+                                <label for="summary ">Job Summary:</label>
+                                <textarea name="summary " placeholder="Job Summary" formControlName="jobSummary" class="textarea " class="form-control "></textarea>
+                            </div>
+                        </div>
+
+
+                        <div class="row ">
+                            <div class="col-sm-12 text-center ">
+                                <button class="btn theme-btn full-width">Submit</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+
+        </div>
+    </section>
+</div>

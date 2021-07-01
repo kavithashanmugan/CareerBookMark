@@ -13,7 +13,7 @@ import { ApiService } from "../../shared/api.service";
 })
 export class PostJobComponent implements OnInit {
   public Editor = ClassicEditor;
-  userId:any;
+  hirerId:any;
   postJobForm = new FormGroup({
     jobTitle:new FormControl('',Validators.required),
     Company:new FormControl('',Validators.required),
@@ -32,11 +32,11 @@ step:any=1;
   constructor(private formBuilder: FormBuilder,private router: Router,public api: ApiService,private _Activatedroute:ActivatedRoute) { }
 
   async ngOnInit() {
-//     this.userId=this._Activatedroute.snapshot.paramMap.get("userId");
-// console.log("userid",this.userId)
-//this.userId,
+    this.hirerId=localStorage.getItem('hirerId')
+    console.log("hiredId",localStorage.getItem('hirerId'))
+if(this.hirerId !=null){
     this.postJobForm = this.formBuilder.group({
-      userId:"svzHfUWmbph3Yrfy2wJOCvQ1gH32",
+      hirerId:this.hirerId,
       jobTitle: [''],
       Company:[''],
       companyDesc:[''],
@@ -46,8 +46,26 @@ step:any=1;
       jobStartDate:[''],
       jobRequirements:[''],
       jobSummary:[''],
-      jobPostedDate:new Date()
+      jobPostedDate:new Date(),
+      jobStatus:"Open"
   });
+}
+if(this.hirerId ==null){
+  this.postJobForm = this.formBuilder.group({
+    hirerId:"guest",
+    jobTitle: [''],
+    Company:[''],
+    companyDesc:[''],
+    salaryRange:[''],
+    jobLocation:[''],
+    jobType:[''],
+    jobStartDate:[''],
+    jobRequirements:[''],
+    jobSummary:[''],
+    jobPostedDate:new Date(),
+    jobStatus:"Open"
+});
+}
    
 
   }

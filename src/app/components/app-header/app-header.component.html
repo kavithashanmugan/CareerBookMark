@@ -1,5 +1,5 @@
 <div id="app">
-    <nav class="navbar navbar-expand-md navbar-dark sticky-top">
+    <nav class="navbar navbar-expand-md navbar-dark sticky-top py-2">
         <a class="navbar-brand" href="#"><img class="logo" src="../../../assets/images/image.jpg" alt="careerbookmarklogo"></a>
         <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
           <span class="navbar-toggler-icon"></span>
@@ -20,9 +20,9 @@
                 <a [routerLink]="'/network'" class="nav-link" href="#" [routerLinkActive]="['active']">Networking</a>
 
             </li>
-            <li class="nav-item">
+            <!-- <li class="nav-item">
                 <a [routerLink]="'/upskill'" class="nav-link" href="#" [routerLinkActive]="['active']">Upskill</a>
-            </li>
+            </li> -->
 
         </ul>
         <!-- <div class="navbar-nav">
@@ -68,9 +68,18 @@
                 <div class="nav-item dropdown">
                     <a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle mr-4"><i class='far fa-user-circle'></i></a>
 
-                    <div class="dropdown-menu dropdwn ">
-                        <li>{{email}}</li>
-                        <button style="align-items: center;" (click)="logout()">LogOut</button>
+                    <div class="dropdown-menu px-4 dropdown-menu-right">
+
+                        <a class="dropdown-item">{{email}}</a>
+                        <a class="dropdown-item" [routerLink]="['/portfolio',userId]">My Profile</a>
+                        <div class="dropdown-divider"></div>
+
+                        <a href="#" class="dropdown-item" (click)="logout()">Logout</a>
+
+
+                        <!-- <button style="align-items: center;" (click)="logout()">LogOut</button> -->
+
+
                     </div>
                 </div>
 

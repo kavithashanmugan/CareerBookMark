@@ -25,7 +25,7 @@ export class AppHeaderComponent implements OnInit {
 
   ngOnInit(){
   console.log("hey",this.firebase.isLoggedIn)
-    if(this.firebase.isLoggedIn == true){
+    if(localStorage.getItem('user')!=null){
       
       this.userLogin = true;
       console.log("userLogin",this.userLogin)

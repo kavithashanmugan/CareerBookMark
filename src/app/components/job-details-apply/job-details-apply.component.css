@@ -1,0 +1,67 @@
+    .postjobsection {
+        background: #ffffff;
+        display: block;
+    }
+    
+    @media (min-width: 1200px) {
+        .container {
+            width: 1240px;
+            padding-bottom: 80px;
+        }
+    }
+    
+    .box {
+        position: relative;
+        border-top: 0;
+        margin-bottom: 40px;
+        width: 100%;
+        background: #fff;
+        border-radius: 4px;
+        padding: 0px;
+        -webkit-transition: .5s;
+        transition: .5s;
+        display: -ms-utf_flexbox_area;
+        display: flex;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        box-shadow: 0 5px 15px 0 rgb(41 128 185 / 10%);
+        -webkit-box-shadow: 0 5px 15px 0 rgb(41 128 185 / 10%);
+        padding: 20px;
+        margin-top: 10px;
+    }
+    
+    #backtojob {
+        font-size: 16px;
+        text-decoration: underline;
+    }
+    
+    .applybtn {
+        width: 150px;
+        font-size: 15px;
+    }
+    
+    .closedbtn {
+        width: 150px;
+        font-size: 15px;
+        background-color: gray;
+    }
+    
+    .jobStyle {
+        flex: 0 0 460px;
+        flex-grow: 0;
+        flex-shrink: 0;
+        flex-basis: 460px;
+        margin-right: 24px;
+        min-width: 0;
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+    }
+    
+    #box-header {
+        background-color: rgba(255, 255, 255, 0.9);
+        font-size: 2.5rem;
+    }
+    
+    .details {
+        font-weight: 650;
+    }

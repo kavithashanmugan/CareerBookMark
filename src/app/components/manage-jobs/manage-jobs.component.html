@@ -1,23 +1,115 @@
 <app-hiring-header></app-hiring-header>
-<p>
-    manage-jobs works!</p>
-<div class="container-fluid">
+<div *ngIf="hirerId">
+    <div class="container-fluid">
 
-    <div class="search-box">
-        <div class="row">
-            <form [formGroup]=" postJobForm">
-                <div class="searchform">
-                    <div class="form-group col-md-10 col-sm-10">
-                        <input class="text form-control" id="searchStr" placeholder="Search Posted Jobs" formControlName="keywords" class="form-control">
+        <div class="search-box">
+            <div class="row">
+                <form [formGroup]="jobPostedSearchForm" (ngSubmit)="searchPostedJobs()">
+                    <div class="searchform">
+                        <div class="form-group col-md-10 col-sm-10">
+                            <input class="text form-control" id="searchStr" placeholder="Search Posted Jobs" formControlName="jobKeyWords" class="form-control">
+                        </div>
+                        <div class=" col-md-2 col-sm-2 ">
+                            <button type="submit " class="btn theme-btn ">Search Jobs</button>
+                        </div>
                     </div>
-                    <div class=" col-md-2 col-sm-2 ">
-                        <button type="submit " class="btn theme-btn ">Search Jobs</button>
+                </form>
+            </div>
+        </div>
+        <div class="manage-jobs">
+            <h1>Manage Jobs</h1>
+            <div class="manageJobsBox">
+
+                <ul class="nav nav-fill justify-content-center">
+                    <li class="nav-item active">
+                        <a data-toggle="tab" href="#openJobs">Open Jobs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a data-toggle="tab" href="#closedJobs">Closed Jobs</a>
+                    </li>
+
+                </ul>
+
+                <!-- Tab panes -->
+                <div class="tab-content clearfix">
+                    <div class="tab-pane active" id="openJobs">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div *ngIf="noOpenMsg">
+                                    <h3> {{noOpenMsg}}</h3>
+                                </div>
+                                <div *ngIf="!noOpenMsg">
+                                    <table class="table caption-top">
+
+                                        <thead>
+                                            <tr>
+                                                <!-- <th scope="col">#</th> -->
+                                                <th scope="col">Job Id</th>
+                                                <th scope="col">Job Title</th>
+                                                <th scope="col">Location</th>
+                                                <th scope="col">Type</th>
+                                                <th scope="col">Applicants</th>
+                                                <th scope="col">Posted</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr *ngFor="let open of myOpenJobs" class="openrow">
+                                                <!-- <th scope="row">1</th> -->
+                                                <td>
+                                                    <a [routerLink]="['/job-details-company',open.jobId]"> {{open.jobId}}</a>
+                                                </td>
+                                                <td>{{open.jobTitle}}</td>
+                                                <td>{{open.jobLocation}}</td>
+                                                <td>{{open.jobType}}</td>
+                                                <td>{{open.appliedCandidates.length}}</td>
+                                                <td>{{open.jobPostedDate |dateAgo}}</td>
+
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
                     </div>
+                    <div class="tab-pane" id="closedJobs">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div *ngIf="noClosedMsg">
+                                    <h3>{{noClosedMsg}}</h3>
+                                </div>
+                                <div *ngIf="!noClosedMsg">
+                                    <table class="table caption-top">
+
+                                        <thead>
+                                            <tr>
+                                                <!-- <th scope="col">#</th> -->
+                                                <th scope="col">Job Id</th>
+                                                <th scope="col">Job Title</th>
+                                                <th scope="col">Location</th>
+                                                <th scope="col">Type</th>
+                                                <th scope="col">Applicants</th>
+                                                <th scope="col">Posted</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr *ngFor="let close of myClosedJobs">
+                                                <!-- <th scope="row">1</th> -->
+                                                <td>{{close.jobId}}</td>
+                                                <td>{{close.jobTitle}}</td>
+                                                <td>{{close.jobLocation}}</td>
+                                                <td>{{close.jobType}}</td>
+                                                <td>{{close.appliedCandidates.length}}</td>
+                                                <td>{{close.jobPostedDate |dateAgo}}</td>
+
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
-            </form>
+            </div>
         </div>
     </div>
-    <div class="manage-jobs">
-        <h1>Manage Jobs</h1>
-    </div>
-</div>

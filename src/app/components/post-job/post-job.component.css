@@ -6,12 +6,30 @@
     border: 1px solid;
     padding: 5%;
     background-color: #FFFFFF;
-    box-shadow: 0px 0px 10px 0px #00000029;
+    box-shadow: 0px 0px 10px 0px #1C66A3;
     border-radius: 4px;
 }
 
 label {
     font-size: 15px;
+}
+
+.guestpost {
+    background-image: url('https://adoptostaging.blob.core.windows.net/media/guest-relations-manager-job-description-template-SxN0HJ.jpg');
+    /* Full height */
+    height: 1000px;
+    /* Center and scale the image nicely */
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.messageGuest {
+    font-family: 'Tangerine', serif;
+    font-size: 60px;
+    font-weight: 600;
+    color: azure;
+    text-align: right;
+    position: absolute;
 }
 
 .submitBtn {
@@ -72,7 +90,7 @@ label {
 }
 
 .box-header {
-    background: #4c5457;
+    background: #1C66A3;
     border-bottom: 0px;
     padding: 20px 30px;
     margin-bottom: 0;
