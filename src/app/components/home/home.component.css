@@ -1,15 +1,10 @@
-@media (min-width: 1025px) {
-    .bgImage {
-        background-image: url("../../../assets/images/JOB.jpg");
-        background-repeat: no-repeat;
-        /* background-color: cadetblue; */
-        height: 750px;
-        background-position: 50% 40%;
-        opacity: 0.9;
-        background-size: cover;
-        /* margin-top:0;
-        padding-top:0; */
-    }
+.bgImage {
+    background-image: url("../../../assets/images/JOB.jpg");
+    background-repeat: no-repeat;
+    height: 750px;
+    background-position: 50% 40%;
+    opacity: 0.9;
+    background-size: cover;
 }
 
 .desc {
