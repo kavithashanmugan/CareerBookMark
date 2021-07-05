@@ -8,7 +8,7 @@
             <h1>Get Noticed by Recruiters and Companies
             </h1>
             <h1>
-                <a [routerLink]="['home']">SIGNUP </a>TO CAREER BOOK MARK
+                <a [routerLink]="['/home']">SIGNUP </a>TO CAREER BOOK MARK
             </h1>
             <!-- <a [routerLink]="['home']">CAREER BOOK MARK</a> to create Your Portfolio -->
 
@@ -20,7 +20,7 @@
 <div *ngIf=portfolioFlag>
     <div class="container">
         <div class="row">
-            <div class="col-md-8 portfolio">
+            <div class="col-md-12 portfolio">
                 <div class="clearfix box">
 
 
@@ -36,7 +36,12 @@
                         <!-- <a class="btn btn-secondary float-right" (click)="updateProfile()"><i class='fas fa-pencil-alt' style='font-size:15px'></i></a> -->
 
                     </p>
-                    <p><a href="http://www.google.com">{{portfolio.website}}</a></p>
+                    <p id="emailId" class="clearfix">
+                        {{portfolio.emailId}}
+                        <!-- <a class="btn btn-secondary float-right" (click)="updateProfile()"><i class='fas fa-pencil-alt' style='font-size:15px'></i></a> -->
+
+                    </p>
+                    <p><a [attr.href]="portfolio.website">{{portfolio.website}}</a></p>
                     <p id="location">
                         {{portfolio.location}}
                     </p>
@@ -77,60 +82,6 @@
 
                 </div>
             </div>
-            <div class="col-md-2 ml-2" *ngIf="userFlag">
-                <h1 style="text-align:center">Jobs for You</h1>
-                <!-- <div class="card">
-                    <h5 class="card-header">
-                        Card title
-                    </h5>
-                    <div class="card-body">
-                        <p class="card-text">
-                            Card content
-                        </p>
-                    </div>
-                    <div class="card-footer">
-                        Card footer
-                    </div>
-                </div>
-                <div class="card">
-                    <h5 class="card-header">
-                        Card title
-                    </h5>
-                    <div class="card-body">
-                        <p class="card-text">
-                            Card content
-                        </p>
-                    </div>
-                    <div class="card-footer">
-                        Card footer
-                    </div>
-                </div>
-                <div class="card">
-                    <h5 class="card-header">
-                        Card title
-                    </h5>
-                    <div class="card-body">
-                        <p class="card-text">
-                            Card content
-                        </p>
-                    </div>
-                    <div class="card-footer">
-                        Card footer
-                    </div>
-                </div>
-                <div class="card">
-                    <h5 class="card-header">
-                        Card title
-                    </h5>
-                    <div class="card-body">
-                        <p class="card-text">
-                            Card content
-                        </p>
-                    </div>
-                    <div class="card-footer">
-                        Card footer
-                    </div>
-                </div> -->
-            </div>
+
         </div>
     </div>

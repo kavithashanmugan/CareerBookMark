@@ -11,18 +11,23 @@ import { ApiService } from "../../shared/api.service";
 export class AllProfilesComponent implements OnInit {
 
   allProfiles:any;
+  hirerId:any;
+  Id:any;
   constructor(private modalService: NgbModal,public api: ApiService) {}
 
   ngOnInit(){
+
+    this.hirerId = localStorage.getItem('hirerId') 
     this.getAllProfiles()
   }
 
   getAllProfiles(){
-    this.api.getAllProfiles()
+    this.Id={"Id":this.hirerId}
+    this.api.getAllProfiles(this.Id)
     .subscribe((res)=>{
       console.log("res",res)
       this.allProfiles = res["result"]
-      console.log("porfile",this.allProfiles)
+      console.log("profile",this.allProfiles)
      
   })
   }

@@ -62,10 +62,10 @@ apiURL:String= 'http://localhost:4000/api/'
   }
 
 
-  getAllProfiles(){
+  getAllProfiles(Id){
     
     
-    return this.http.get(`${this.apiURL}/getAllProfiles`)
+    return this.http.get(`${this.apiURL}/getAllProfiles/`+ Id)
     
   }
 

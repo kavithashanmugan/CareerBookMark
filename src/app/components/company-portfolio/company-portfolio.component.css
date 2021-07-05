@@ -130,21 +130,30 @@
     }
     
     #employees {
-        font-size: 15px;
+        font-size: 20px;
+        line-height: 10px;
     }
     
     #industry {
-        font-size: 15px;
+        font-size: 20px;
+        line-height: 10px;
     }
     
     #title {
-        font-size: 15px;
+        font-size: 20px;
+        line-height: 10px;
     }
     
     #location {
-        font-size: 15px;
+        font-size: 20px;
+        line-height: 10px;
     }
     
     #companydetails {
-        font-size: 15px;
+        font-size: 18px;
+    }
+    
+    #title {
+        font-size: 20px;
+        line-height: 10px;
     }
