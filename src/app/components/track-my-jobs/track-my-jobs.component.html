@@ -10,9 +10,15 @@
                         <h5 class="mb-1">{{jobs.jobTitle}}</h5>
                         <h6>{{jobs.appliedOn|dateAgo}}</h6>
                     </div>
-                    <p class="mb-1">{{jobs.Company}}</p>
-                    <small>{{jobs.jobLocation}}</small>
-                    <p hidden>{{jobs.jobId}}</p>
+                    <div class="d-flex w-100 justify-content-between">
+                        <p class="mb-1">{{jobs.Company}}</p>
+                        <p class="mb-1">Status:{{jobs.jobStatus}}</p>
+
+
+                    </div>
+                    <div> <small>{{jobs.jobLocation}}</small>
+                        <p hidden>{{jobs.jobId}}</p>
+                    </div>
 
                 </a>
             </div>

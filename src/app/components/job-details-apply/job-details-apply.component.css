@@ -46,6 +46,14 @@
         background-color: gray;
     }
     
+    .appliedbtn {
+        width: 150px;
+        font-size: 15px;
+        color: blue;
+        background-color: none(9, 12, 167);
+        border-color: blue;
+    }
+    
     .jobStyle {
         flex: 0 0 460px;
         flex-grow: 0;
@@ -59,9 +67,23 @@
     
     #box-header {
         background-color: rgba(255, 255, 255, 0.9);
-        font-size: 2.5rem;
+        font-size: 25px;
+        font-weight: 300;
     }
     
     .details {
-        font-weight: 650;
+        font-size: 20px;
+    }
+    
+    .jobStyles {
+        font-size: 15px;
+    }
+    
+    .companyStyles {
+        font-size: 15px;
+        padding: 5px;
+    }
+    
+    *body {
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     }

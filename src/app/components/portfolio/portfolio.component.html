@@ -26,7 +26,9 @@
 
                     <h3 id="name">
                         {{portfolio.fullName}}
-                        <a class="btn btn-secondary float-right" (click)="updateProfile()"><i class='fas fa-pencil-alt' style='font-size:15px'></i></a>
+                        <div *ngIf="userFlag">
+                            <a class="btn btn-secondary float-right" (click)="updateProfile()"><i class='fas fa-pencil-alt' style='font-size:15px'></i></a>
+                        </div>
                         <!-- <input *ngIf="editProfile" [(ngModel)]="portfolio.fullName" type="text" class="form-control" /> -->
                     </h3>
                     <p id="title" class="clearfix">
@@ -75,7 +77,7 @@
 
                 </div>
             </div>
-            <div class="col-md-2 ml-2">
+            <div class="col-md-2 ml-2" *ngIf="userFlag">
                 <h1 style="text-align:center">Jobs for You</h1>
                 <!-- <div class="card">
                     <h5 class="card-header">

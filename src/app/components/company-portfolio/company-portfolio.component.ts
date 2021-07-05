@@ -12,24 +12,32 @@ export class CompanyPortfolioComponent implements OnInit {
   companyPortfolio:any=[];
   companyPortfolioFlag:boolean=false;
   hirerId:any;
+  userView:boolean=false;
 
   constructor(public api: ApiService,private _Activatedroute:ActivatedRoute,public firebase : FirebaseService,private router: Router) { }
 
   async ngOnInit(){
 
     console.log("page loading...")
+    console.log("company is viewed by",this.userView)
     if(localStorage.getItem('hirer')!=null){
       let data = (JSON.parse(localStorage.getItem('hirer')));
 console.log(localStorage.getItem('hirer'))
       console.log("data",data)
       this.getCompanyProfileDetails(data["uid"]);
       this.companyPortfolioFlag = true
+      this.userView=false;
     }
     this.hirerId=this._Activatedroute.snapshot.paramMap.get("hirerId");
-    console.log("hirerId",this.hirerId)
-    if(this.hirerId!=undefined && this.firebase.isLoggedIn==true){
+    console.log("hirerId for company",this.hirerId)
+    if(this.hirerId!=undefined && this.firebase.isHirerLoggedIn==true){
       this.getCompanyProfileDetails(this.hirerId); 
       this.companyPortfolioFlag = true
+      this.userView=false;
+    }
+    if(this.hirerId!=undefined){
+      this.getCompanyProfileDetails(this.hirerId); 
+      this.userView = true
     }
   }
   getCompanyProfileDetails(hirerId){

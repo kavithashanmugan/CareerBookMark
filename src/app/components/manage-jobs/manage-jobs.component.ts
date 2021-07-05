@@ -18,6 +18,7 @@ export class ManageJobsComponent implements OnInit {
   noClosedMsg: any;
   noOpenMsg: any;
   hirerId: any;
+  searchFlag:boolean=false;
   searchResults: any;
   jobPostedSearchForm = new FormGroup({
     hirerId:new FormControl('',Validators.required),
@@ -47,7 +48,7 @@ export class ManageJobsComponent implements OnInit {
       .subscribe((res) => {
         if (res["status"] == true) {
 
-          this.searchResults = true;
+          this.searchFlag = true;
           console.log("results search jobs",res)
           this.searchResults = res["result"];
         }

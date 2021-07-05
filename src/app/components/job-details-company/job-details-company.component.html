@@ -6,7 +6,7 @@
 
             <div *ngIf="closedJob">
                 <h3 id="box-header">
-                    <span>{{data.jobTitle}}</span>
+                    <span><b>{{data.jobTitle}}</b></span>
                     <button class='btn disabled pull-right closedbtn'>
                         Job Closed
                     </button>
@@ -24,7 +24,7 @@
 
             </div>
             <div class="mt-2 ">
-                <a [routerLink]="['/company-portfolio',hirerId]">{{data.Company}} </a>
+                <a [routerLink]="['/company-portfolio',hirerId]" id="companyname">{{data.Company}} </a>
 
                 <button *ngIf="!closedJob" class='btn btn-close pull-right applybtn' (click)="closeJob()">
                     Close Job
@@ -34,10 +34,10 @@
             <div class="mt-2 ">{{data.jobPostedDate | dateAgo}}</div>
             <div class="mt-2 ">{{data.appliedCandidates.length}} applicants</div>
         </div>
-        <div class="box ">
+        <div class="box">
             <div>
                 <div>
-                    <h3 id="box-header">Job Details</h3>
+                    <h3 id="box-header">About the Job</h3>
                 </div>
                 <div class="mt-2 details">Company Details</div>
                 <div>

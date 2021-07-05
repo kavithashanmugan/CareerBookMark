@@ -16,6 +16,58 @@
                 </form>
             </div>
         </div>
+        <section *ngIf="searchFlag">
+            <div class="container">
+                <div>
+                    <div class="resultBox">
+                        <h3>Search Results</h3>
+                        <hr>
+                        <div class="row">
+
+                            <div class="col-sm-3 col-md-3 py-2" *ngFor="let job of searchResults">
+                                <div class="card job-card-body margin:0 auto;">
+                                    <div class="row">
+                                        <h5 id="job-card-header">
+                                            <div class="col-sm-6"> <img class="img-company" src="../../../assets/images/companylogo.png" alt="Card image cap"></div>
+                                            <button class="save-job"><i class="fas fa-bookmark"></i>
+            
+                                            </button>
+
+                                        </h5>
+                                    </div>
+
+
+
+                                    <div class="card-body d-flex flex-column">
+                                        <h3 class="card-title">
+                                            {{job.jobTitle}}
+                                        </h3>
+                                        <h5 class="card-text">
+                                            {{job.Company}}
+                                        </h5>
+                                        <p class="card-text">
+                                            {{job.jobLocation}}
+                                        </p>
+                                        <!-- //job.jobPostedDate -->
+                                        <p>Job posted date : {{ job.jobPostedDate | dateAgo}}</p>
+
+
+                                    </div>
+                                    <div>
+                                        <div class="card-footer">
+                                            <div style="text-align: center;">
+                                                <button type="button" class="btn btn-primary btn-apply" style="padding:5px;" [routerLink]="['/job-details-company',job.jobId]">View Job</button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
         <div class="manage-jobs">
             <h1>Manage Jobs</h1>
             <div class="manageJobsBox">

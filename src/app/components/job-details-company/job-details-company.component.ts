@@ -12,7 +12,7 @@ export class JobDetailsCompanyComponent implements OnInit {
   closedJob: boolean = false;
   data: any;
   hirerId: any;
-  constructor(private route: ActivatedRoute, public api: ApiService) { }
+  constructor(private route: ActivatedRoute, public api: ApiService,private router: Router) { }
 
   ngOnInit() {
     this.jobId = this.route.snapshot.paramMap.get("jobId")
@@ -38,9 +38,11 @@ export class JobDetailsCompanyComponent implements OnInit {
       })
   }
   viewCandidates() {
-    alert("view candidates")
+    this.router.navigate(['/manage-profiles-company',this.jobId]);
+    //alert("view candidates");
+    
   }
-
+  
   closeJob() {
 console.log("hitting close job")
     console.log("job id for",this.jobId)

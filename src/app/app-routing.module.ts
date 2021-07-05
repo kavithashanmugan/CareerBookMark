@@ -22,6 +22,7 @@ import { TrackMyJobsComponent } from './components/track-my-jobs/track-my-jobs.c
 import { JobDetailsCompanyComponent } from './components/job-details-company/job-details-company.component';
 import { ManageProfilesCompanyComponent } from './components/manage-profiles-company/manage-profiles-company.component';
 import { AllProfilesComponent } from './components/all-profiles/all-profiles.component';
+
 const routes: Routes = [{path:'create-profile/:userId',component:CreateProfileComponent},
 {path:'jobs',component:JobsComponent},
 {path:'portfolio/:userId',component:PortfolioComponent},
@@ -42,7 +43,7 @@ const routes: Routes = [{path:'create-profile/:userId',component:CreateProfileCo
 {path:'job-details-apply/:jobId',component:JobDetailsApplyComponent},
 {path:'job-details-company/:jobId',component:JobDetailsCompanyComponent},
 {path:'track-my-jobs',component:TrackMyJobsComponent},
-{path:'manage-profiles-company/:hirerId',component:ManageProfilesCompanyComponent},
+{path:'manage-profiles-company/:jobId',component:ManageProfilesCompanyComponent},
 {path:'all-profiles',component:AllProfilesComponent}
 
 ];

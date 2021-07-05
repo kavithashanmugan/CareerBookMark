@@ -8,45 +8,50 @@
         <div class="box ">
 
             <div *ngIf="closedJob ">
-                <h3 id="box-header ">
+                <h1 id="box-header ">
                     <span>{{data.jobTitle}}</span>
                     <button class='btn disabled pull-right closedbtn'>
                         Job Closed
                     </button>
-                </h3>
+                </h1>
 
             </div>
             <div *ngIf="!closedJob ">
-                <h3 id="box-header ">
+                <h1 id="box-header ">
                     <span>{{data.jobTitle}}</span>
-                    <button class='btn btn-success pull-right applybtn' (click)="applyingJob() ">
+                    <button class='btn btn-success pull-right applybtn' (click)="applyingJob()" *ngIf="!candidateApplied">
                         Apply
                     </button>
-                </h3>
+                    <button class='btn disabled pull-right appliedbtn' *ngIf="candidateApplied">
+                        Applied
+                    </button>
+                </h1>
             </div>
-            <div class="mt-2 ">{{data.Company}}</div>
-            <div class="mt-2 ">{{data.jobLocation}}</div>
-            <div class="mt-2 ">{{data.jobPostedDate | dateAgo}}</div>
-            <div class="mt-2 ">{{data.appliedCandidates.length}} applicants</div>
+            <div class="mt-2 companyStyles">
+                <a [routerLink]="['/company-portfolio',hirerId]">{{data.Company}} </a>
+            </div>
+            <div class="mt-2 jobStyles">{{data.jobLocation}}</div>
+            <div class="mt-2 jobStyles">{{data.jobPostedDate | dateAgo}}</div>
+            <div class="mt-2 jobStyles">{{data.appliedCandidates.length}} applicants</div>
         </div>
         <div class="box ">
             <div>
                 <div>
-                    <h3 id="box-header ">Job Details</h3>
+                    <h2 id="box-header">Job Details</h2>
                 </div>
                 <div class="mt-2 details ">Company Details</div>
-                <div>
+                <div class="jobStyles">
 
                     {{data.companyDesc}}</div>
-                <div class="details ">Job Requirements</div>
-                <div>{{data.jobRequirements}}</div>
+                <div class="details">Job Requirements</div>
+                <div class="jobStyles">{{data.jobRequirements}}</div>
                 <div class="details ">Job Summary</div>
-                <div>{{data.jobSummary}}</div>
+                <div class="jobStyles">{{data.jobSummary}}</div>
             </div>
         </div>
-        <div class="box ">
-            <h3 id="box-header ">Salary</h3>
-            <div>{{data.salaryRange}}</div>
+        <div class="box">
+            <h2 id="box-header ">Salary</h2>
+            <div class="jobStyles">{{data.salaryRange}}</div>
         </div>
     </div>
 

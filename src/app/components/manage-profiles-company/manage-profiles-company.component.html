@@ -1,6 +1,159 @@
 <app-hiring-header></app-hiring-header>
 <div class="container">
-    <div class="box">
-        <h2>Manage Profiles</h2>
+
+    <div class="manage-jobs">
+        <h1>Manage profiles for job Id: {{jobId}}</h1>
+        <hr>
+        <div class="manageJobsBox">
+
+            <ul class="nav nav-fill justify-content-center">
+                <li class="nav-item active">
+                    <a data-toggle="tab" href="#appliedCandidates">Applied Candidates</a>
+                </li>
+                <li class="nav-item">
+                    <a data-toggle="tab" href="#shortlistedCandidates">Shortlisted Candidates</a>
+                </li>
+                <li class="nav-item">
+                    <a data-toggle="tab" href="#rejectedCandidates">Rejected Candidates</a>
+                </li>
+
+            </ul>
+
+            <!-- Tab panes -->
+            <div class="tab-content clearfix">
+                <div class="tab-pane active" id="appliedCandidates">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div *ngIf="noAppliedCandidate" class="noMsg">
+                                <h3> {{noCandidates}}</h3>
+                            </div>
+                            <div *ngIf="!noAppliedCandidate">
+                                <table class="table caption-top">
+
+                                    <thead>
+                                        <tr>
+                                            <!-- <th scope="col">#</th> -->
+                                            <th scope="col">User Id</th>
+                                            <th scope="col">Name</th>
+                                            <th scope="col">Job title</th>
+                                            <th scope="col">Location</th>
+                                            <th scope="col">Applied On</th>
+                                            <th scope="col">Application status</th>
+                                            <th colspan="2" scope="colgroup">Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr *ngFor="let applied of appliedCandidates" class="openrow">
+                                            <!-- <th scope="row">1</th> -->
+                                            <td>
+                                                <a [routerLink]="['/portfolio',applied.userId]"> {{applied.userId}}</a>
+                                            </td>
+
+                                            <td>{{applied.fullName}}</td>
+                                            <td>{{applied.userJobTitle}}</td>
+                                            <td>{{applied.userLocation}}</td>
+                                            <td>{{applied.appliedOn |dateAgo}}</td>
+                                            <td>{{applied.userStatus}}</td>
+
+                                            <td><button id="shortlist">Shortlist</button>
+                                            </td>
+
+                                            <td><button id="reject">Reject</button></td>
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane" id="shortlistedCandidates">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div *ngIf="noShortListedCandidate">
+                                <h3> {{noShortListed}}</h3>
+                            </div>
+                            <div *ngIf="!noShortListedCandidate">
+                                <!-- *ngIf="!noClosedMsg" -->
+                                <table class="table caption-top">
+
+                                    <thead>
+                                        <tr>
+                                            <!-- <th scope="col">#</th> -->
+                                            <th scope="col">User Id</th>
+                                            <th scope="col">Name</th>
+                                            <th scope="col">Job title</th>
+                                            <th scope="col">Location</th>
+                                            <th scope="col">Applied On</th>
+                                            <th scope="col">Application status</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr *ngFor="let shortlisted of shortListedCandidates" class="openrow">
+                                            <!-- <th scope="row">1</th> -->
+                                            <td>
+                                                <a [routerLink]="['/portfolio',shortlisted.userId]"> {{shortlisted.userId}}</a>
+                                            </td>
+
+                                            <td>{{shortlisted.fullName}}</td>
+                                            <td>{{shortlisted.userJobTitle}}</td>
+                                            <td>{{shortlisted.userLocation}}</td>
+                                            <td>{{shortlisted.appliedOn |dateAgo}}</td>
+                                            <td>{{shortlisted.userStatus}}</td>
+
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane" id="rejectedCandidates">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div *ngIf="noRejectedCandidate" class="noMsg">
+                                <h3>No Rejected Candidates</h3>
+                            </div>
+                            <div *ngIf="!noRejectedCandidate">
+                                <!-- *ngIf="!noClosedMsg" -->
+                                <table class="table caption-top">
+
+                                    <thead>
+                                        <tr>
+                                            <!-- <th scope="col">#</th> -->
+                                            <th scope="col">User Id</th>
+                                            <th scope="col">Name</th>
+                                            <th scope="col">Job title</th>
+                                            <th scope="col">Location</th>
+                                            <th scope="col">Applied On</th>
+                                            <th scope="col">Application status</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr *ngFor="let rejected of rejectedCandidates" class="openrow">
+                                            <!-- <th scope="row">1</th> -->
+                                            <td>
+                                                <a [routerLink]="['/portfolio',rejected.userId]"> {{rejected.userId}}</a>
+                                            </td>
+
+                                            <td>{{rejected.fullName}}</td>
+                                            <td>{{rejected.userJobTitle}}</td>
+                                            <td>{{rejected.userLocation}}</td>
+                                            <td>{{rejected.appliedOn |dateAgo}}</td>
+                                            <td>{{rejected.userStatus}}</td>
+
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>

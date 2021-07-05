@@ -1,13 +1,12 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
-import { Observable, throwError } from 'rxjs';
-import { retry, catchError } from 'rxjs/operators';
 @Injectable({
   providedIn: 'root'
 })
 export class ApiService {
 
-  apiURL:string = 'https://careerbookmarkbe.herokuapp.com/api/';
+apiURL:String= 'http://localhost:4000/api/'
+  //apiURL:string = 'https://careerbookmarkbe.herokuapp.com/api/';
   constructor(private http: HttpClient) { 
 
 
@@ -114,10 +113,27 @@ export class ApiService {
     return this.http.post(`${this.apiURL}/getOpenJobsByHirer`,hirerId)
   }
 
+  getAppliedCandidates(jobId){
+    return this.http.get(`${this.apiURL}/getAppliedCandidates/`+ jobId)
+  }
+
 closeJob(jobId){
   
   return this.http.post(`${this.apiURL}/closeJob`,jobId)
 }
+shortListCandidates(){
 
+}
+rejectCandidates(){
+
+}
+
+getShortListedCandidates(jobId){
+  return this.http.get(`${this.apiURL}/getShortListedCandidates/`+ jobId)
+}
+
+getRejectedCandidates(jobId){
+  return this.http.get(`${this.apiURL}/getRejectedCandidates/`+ jobId)
+}
   
 }

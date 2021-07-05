@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ApiService } from "../../shared/api.service";
-import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 
 
 @Component({
@@ -13,10 +12,12 @@ export class JobDetailsApplyComponent implements OnInit {
 data:any;
 jobId:any;
 userId:any;
+hirerId:any;
 jobStatus:any;
 closedJob:boolean=false;
+candidateApplied:boolean=false;
 portfolio:[]=[];
-  constructor(private route: ActivatedRoute, private router: Router,public api: ApiService,private modalService:NgbModal) {
+  constructor(private route: ActivatedRoute, private router: Router,public api: ApiService) {
       
    }
 
@@ -27,6 +28,7 @@ portfolio:[]=[];
     if(this.jobId!=undefined ){
       this.getJobById(this.jobId); 
       this.getProfileDetails(this.userId);
+      
     }
   }
   
@@ -38,6 +40,10 @@ this.api.getJobById(jobId)
         console.log("job result...",res["result"])
       this.data = res["result"]
       this.jobStatus = res["result"].jobStatus;
+      this.hirerId = res["result"].hirerId;
+      console.log("hirerId is:",this.hirerId)
+      this.checkIfApplied(res["result"].appliedCandidates,this.userId);
+      console.log("candidate applied?",this.candidateApplied)
       console.log("test",this.data.jobTitle)
       console.log("job status",this.jobStatus)
       if(this.jobStatus == "Closed"){
@@ -82,6 +88,20 @@ this.api.applyJob(requestObj)
   }
 
 
+  checkIfApplied(arr,userId){
+    console.log("checking data",this.data)
+    arr.forEach((el)=>{
+      if(el.userId == userId){
+       
+        this.candidateApplied = true;
+        return true;
+      }
+
+      
+    }
+    )}
+
+  
 
 
 }
