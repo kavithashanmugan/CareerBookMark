@@ -54,11 +54,13 @@
                                             <td>{{applied.userLocation}}</td>
                                             <td>{{applied.appliedOn |dateAgo}}</td>
                                             <td>{{applied.userStatus}}</td>
+                                            <div>
+                                                <td *ngIf="applied.userStatus=='applied'"><button id="shortlist" (click)="shortListCandidates(applied)"><input type="hidden" value={{applied}}/>Shortlist</button>
+                                                </td>
 
-                                            <td><button id="shortlist">Shortlist</button>
-                                            </td>
-
-                                            <td><button id="reject">Reject</button></td>
+                                                <td *ngIf="applied.userStatus=='applied'"><button id="reject" (click)="rejectCandidates(applied)"><input type="hidden" value={{applied}}>Reject</button></td>
+                                            </div>
+                                            <!-- <td *ngIf="(applied.userStatus!=applied)">Hello</td> -->
 
                                         </tr>
                                     </tbody>
@@ -67,32 +69,32 @@
                         </div>
                     </div>
                 </div>
-                <div class="tab-pane" id="shortlistedCandidates">
-                    <div class="row">
-                        <div class="col-sm-12">
+                <div class="tab-pane " id="shortlistedCandidates">
+                    <div class="row ">
+                        <div class="col-sm-12 ">
                             <div *ngIf="noShortListedCandidate">
                                 <h3> {{noShortListed}}</h3>
                             </div>
-                            <div *ngIf="!noShortListedCandidate">
-                                <!-- *ngIf="!noClosedMsg" -->
-                                <table class="table caption-top">
+                            <div *ngIf="!noShortListedCandidate ">
+                                <!-- *ngIf="!noClosedMsg " -->
+                                <table class="table caption-top ">
 
                                     <thead>
                                         <tr>
-                                            <!-- <th scope="col">#</th> -->
-                                            <th scope="col">User Id</th>
-                                            <th scope="col">Name</th>
-                                            <th scope="col">Job title</th>
-                                            <th scope="col">Location</th>
-                                            <th scope="col">Applied On</th>
-                                            <th scope="col">Application status</th>
+                                            <!-- <th scope="col ">#</th> -->
+                                            <th scope="col ">User Id</th>
+                                            <th scope="col ">Name</th>
+                                            <th scope="col ">Job title</th>
+                                            <th scope="col ">Location</th>
+                                            <th scope="col ">Applied On</th>
+                                            <th scope="col ">Application status</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr *ngFor="let shortlisted of shortListedCandidates" class="openrow">
-                                            <!-- <th scope="row">1</th> -->
+                                        <tr *ngFor="let shortlisted of shortListedCandidates " class="openrow ">
+                                            <!-- <th scope="row ">1</th> -->
                                             <td>
-                                                <a [routerLink]="['/portfolio',shortlisted.userId]"> {{shortlisted.userId}}</a>
+                                                <a [routerLink]="[ '/portfolio',shortlisted.userId] "> {{shortlisted.userId}}</a>
                                             </td>
 
                                             <td>{{shortlisted.fullName}}</td>
@@ -110,32 +112,32 @@
                         </div>
                     </div>
                 </div>
-                <div class="tab-pane" id="rejectedCandidates">
-                    <div class="row">
-                        <div class="col-sm-12">
-                            <div *ngIf="noRejectedCandidate" class="noMsg">
-                                <h3>No Rejected Candidates</h3>
+                <div class="tab-pane " id="rejectedCandidates">
+                    <div class="row ">
+                        <div class="col-sm-12 ">
+                            <div *ngIf="noRejectedCandidate">
+                                <h3>{{noRejected}}</h3>
                             </div>
-                            <div *ngIf="!noRejectedCandidate">
-                                <!-- *ngIf="!noClosedMsg" -->
-                                <table class="table caption-top">
+                            <div *ngIf="!noRejectedCandidate ">
+                                <!-- *ngIf="!noClosedMsg " -->
+                                <table class="table caption-top ">
 
                                     <thead>
                                         <tr>
-                                            <!-- <th scope="col">#</th> -->
-                                            <th scope="col">User Id</th>
-                                            <th scope="col">Name</th>
-                                            <th scope="col">Job title</th>
-                                            <th scope="col">Location</th>
-                                            <th scope="col">Applied On</th>
-                                            <th scope="col">Application status</th>
+                                            <!-- <th scope="col ">#</th> -->
+                                            <th scope="col ">User Id</th>
+                                            <th scope="col ">Name</th>
+                                            <th scope="col ">Job title</th>
+                                            <th scope="col ">Location</th>
+                                            <th scope="col ">Applied On</th>
+                                            <th scope="col ">Application status</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr *ngFor="let rejected of rejectedCandidates" class="openrow">
-                                            <!-- <th scope="row">1</th> -->
+                                        <tr *ngFor="let rejected of rejectedCandidates " class="openrow ">
+                                            <!-- <th scope="row ">1</th> -->
                                             <td>
-                                                <a [routerLink]="['/portfolio',rejected.userId]"> {{rejected.userId}}</a>
+                                                <a [routerLink]="[ '/portfolio',rejected.userId] "> {{rejected.userId}}</a>
                                             </td>
 
                                             <td>{{rejected.fullName}}</td>

@@ -13,6 +13,8 @@ export class ManageProfilesCompanyComponent implements OnInit {
   noAppliedCandidate:boolean=true;
   appliedCandidates:[]=[];
 
+  shortListedStatus:boolean=false;
+
   noShortListedCandidate:boolean=true;
   noShortListed:any;
   shortListedCandidates:[]=[];
@@ -42,6 +44,7 @@ export class ManageProfilesCompanyComponent implements OnInit {
    
   }
   else{
+    this.noAppliedCandidate = true;
     this.noCandidates="No Candidates"
   }
 })
@@ -58,6 +61,7 @@ export class ManageProfilesCompanyComponent implements OnInit {
        
       }
       else{
+        this.noShortListedCandidate = true;
         this.noShortListed="No candidates shortlisted"
       }
     })
@@ -73,10 +77,54 @@ export class ManageProfilesCompanyComponent implements OnInit {
        
       }
       else{
+        this.noRejectedCandidate = true;
         this.noRejected="No candidates rejected";
         console.log("finalllyyy 2", this.noRejectedCandidate)
       }
     })
+  }
+
+  shortListCandidates(candidate){
+    console.log("job id",this.jobId)
+   
+    console.log("userId",candidate.userId)
+console.log("shortlisting candidate")
+let requestObj = {"jobId":this.jobId,"userId":candidate.userId}
+this.api.shortListCandidates(requestObj)
+.subscribe((res)=>{
+  console.log("result of apply job s",res)
+  if(res["status"] == true && res["result"]!=null){
+    alert("candidate shortlisted")
+    console.log("applied result. is.....",res["result"])
+    this.shortListedStatus = true;
+    this.ngOnInit();
+   // this.router.navigateByUrl('/track-my-jobs');
+  }
+  else{
+    alert("job application failed")
+  }
+})
+  }
+  rejectCandidates(candidate){
+    console.log("job id",this.jobId)
+   
+    console.log("userId",candidate.userId)
+console.log("rejecting candidate")
+let requestObj = {"jobId":this.jobId,"userId":candidate.userId}
+this.api.rejectCandidates(requestObj)
+.subscribe((res)=>{
+  console.log("result of reject canfdidates",res)
+  if(res["status"] == true && res["result"]!=null){
+    alert("candidate rejected")
+    console.log("rejected result is.....",res["result"])
+    this.shortListedStatus = true;
+    this.ngOnInit();
+   // this.router.navigateByUrl('/track-my-jobs');
+  }
+  else{
+    alert("reject candidate failed")
+  }
+})
   }
 
 }

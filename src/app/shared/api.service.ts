@@ -121,11 +121,11 @@ closeJob(jobId){
   
   return this.http.post(`${this.apiURL}/closeJob`,jobId)
 }
-shortListCandidates(){
-
+shortListCandidates(shortListObj){
+return this.http.post(`${this.apiURL}/shortListCandidates`,shortListObj)
 }
-rejectCandidates(){
-
+rejectCandidates(rejectListObj){
+  return this.http.post(`${this.apiURL}/rejectCandidates`,rejectListObj)
 }
 
 getShortListedCandidates(jobId){

@@ -11,7 +11,7 @@ export class HiringHomeComponent implements OnInit {
   constructor(public firebase : FirebaseService,private router: Router) { }
 
   ngOnInit() {
-    if(localStorage.getItem('user') !== null)
+    if(localStorage.getItem('hirer') !== null)
     this.isSignedIn = true;
     else
     this.isSignedIn = false;
