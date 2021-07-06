@@ -5,8 +5,11 @@ import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 })
 export class ApiService {
 
-apiURL:String= 'http://localhost:4000/api/'
+
   //apiURL:string = 'https://careerbookmarkbe.herokuapp.com/api/';
+  //apiURL:String= 'http://localhost:4000/api/'
+
+  apiURL:string='https://careerbookmarkbe2.herokuapp.com/api/';
   constructor(private http: HttpClient) { 
 
 
