@@ -7,7 +7,7 @@ import { retry, catchError } from 'rxjs/operators';
 })
 export class ApiService {
 
-  apiURL:string = 'https://careerbookmarkbe.herokuapp.com/api/';
+  apiURL:string='https://career-book-mark-be.vercel.app/api';
   constructor(private http: HttpClient) { 
 
 
